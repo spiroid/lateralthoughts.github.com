@@ -2617,3 +2617,27 @@ h1, h2 , h3, h4, h5, h6{
 	font-family: 'Merienda', cursive;
 }
 
+/* clients logo */
+#logo_pond {
+  padding: 28px 0;
+  overflow: hidden;
+}
+
+#logo_pond ul {
+  text-align: center;
+  width: 400%;
+  position: relative;
+  left: -150%;
+}
+
+#logo_pond ul li {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  margin: 0 0;
+  width: 250px;
+}
+
+#logo_pond ul li img {
+  max-width: 200px;
+}

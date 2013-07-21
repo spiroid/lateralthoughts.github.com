@@ -1,18 +1,18 @@
 $.Mustache.add('rssshort', '<ul>'+
                             '{{#entries}}'+
-                            '<li><a href="{{link}}" target="_blank">{{title}}</a><p>{{contentSnippet}}</p> </li>'+
+                            '<li><a href="{{link}}" target="_blank">{{title}}</a><p class="description">{{description}}</p> </li>'+
                             '{{/entries}}'+
                             '</ul>');
 
 
 $.Mustache.add('rssfull', '{{#entries}}'+
                         '<tr>'+
-                        '<td>{{author}}'+
-                        '<br/><span class="date">{{publishedDate}}</span></span></td>'+
+                        '<td>{{dc:creator}}'+
+                        '<br/><span class="date">{{pubDate}}</span></span></td>'+
                         '<td>'+
                         '    <a href="{{link}}" target="_blank">{{title}}</a>'+
                         '    <br/>'+
-                        '    <p>{{contentSnippet}}</p>'+
+                        '    <p class="description">{{description}}</p>'+
                         '</td>'+
                       '</tr>'+
                       '{{/entries}}');
@@ -28,33 +28,45 @@ var rssReader = {
             $(this).html(momentized.fromNow());
         });
     },
+    decode : function($element) {
+        $element.find('.description').each(function() {
+            var description = $(this).html();
+            $(this).html(_.unescape(description));
+        });
+    },
 
     // initialization function
     init : function(selector) {
         $(selector).each(function() {
             var rssUrl = $(this).attr('rss_url');
             var num = $(this).attr('rss_num');
-            var id = $(this).attr('id');
+            var method = $(this).attr('id');
 
-            // creating temp scripts which will help us to transform XML (RSS) to JSON
-            var url = encodeURIComponent(rssUrl);
-            var googUrl = 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num='+num+'&q='+url+'&callback=rssReader.parse&context='+id;
+            var feed = 'http://pipes.yahoo.com/pipes/pipe.run?_id='+rssUrl+'&_render=json&limit='+num+'&_callback=rssReader.'+method;
 
             var script = document.createElement('script');
             script.setAttribute('type','text/javascript');
             script.setAttribute('charset','utf-8');
-            script.setAttribute('src',googUrl);
+            script.setAttribute('src',feed);
             $(selector).append(script);
         });
     },
 
-    // parsing of results by google
+    full_rss_version : function(data) {
+        this.parse('full_rss_version',data);
+    },
+
+    last_posts : function(data) {
+        this.parse('last_posts',data);
+    },
+
     parse : function(context, data) {
         var $element = $('#'+context);
         var scriptName = $element.attr('rss_script') || 'short';
-        var entries = data.feed.entries;
+        var entries = data.value.items;
         $element.empty().mustache('rss'+scriptName, {'entries':entries});
         this.replaceDate($element);
+        this.decode($element);
     }
 };
 

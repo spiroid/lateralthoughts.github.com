@@ -16,8 +16,7 @@
 	<link href="css/slider.css" rel="stylesheet">
 	<link href="css/hands-on.css" rel="stylesheet">
 	<script src="js/jquery-1.7.2.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/modernizr-2.5.3.min.js"></script>
+
 	<link href='http://fonts.googleapis.com/css?family=Merienda' rel='stylesheet' type='text/css'>
 
 
@@ -354,15 +353,15 @@ Notez enfin que vous pouvez aussi bénéficier du DIF pour ces ateliers !
 					<div class="span4">
 					<h2>Derniers tweets</h2>
 						<div id="tweet">
-					 		<p><img src="img/ajax-loader.gif" /></p>
-					 		<p><a href="http://twitter.com/lateraithoughts">Si vous ne pouvez pas attendre, cliquez directement sur ce lien</a></p>
+					 		<p><a class="twitter-timeline" href="https://twitter.com/LateraIThoughts" data-widget-id="348881595052208129">Tweets by @LateraIThoughts</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
 						</div>
 
 					</div>
 
 					<div class="span4">
 						<h2>Derniers posts</h2>
-						<div class="post_results" id="last_posts" rss_num="5" rss_url="http://www.google.com/reader/public/atom/user%2F05171757434990369105%2Flabel%2FLateral-Thoughts">
+						<div class="post_results" id="last_posts" rss_num="5" rss_url="8084f9eb3525e9a64afd2b3ae5defc01">
 				            <div class="loading_rss">
 				                <img alt="Loading..." src="img/ajax-loader.gif" />
 				            </div>
@@ -460,19 +459,17 @@ Notez enfin que vous pouvez aussi bénéficier du DIF pour ces ateliers !
 </script>
 </body>
 <script src="js/jquery-Mustache.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/modernizr-2.5.3.min.js"></script>
+<script src="js/underscore.js"></script>
 <script src="js/mustache.js"></script>
-<script src="js/twitter.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function () {
-      getTwitters('tweet', { 
-          id: 'lateraithoughts', 
-          count: 5, 
-          enableLinks: true, 
-          ignoreReplies: true, 
-          clearContents: true,
-          template: '<img src="%user_profile_image_url%" width="20" height="20"/> "%text%" <a href="http://twitter.com/%user_screen_name%/statuses/%id_str%/">%time%</a>'
-        });
-   });
-</script>
+
+<script src="js/bootstrap.js"></script>
+<script src="js/modernizr-2.5.3.min.js"></script>
+<script src="js/underscore.js"></script>
+
+<script src="js/bootstrap.js"></script>
+<script src="js/modernizr-2.5.3.min.js"></script>
+<script src="js/underscore.js"></script>
 <script src="js/rssreader.js"></script>
 </html>

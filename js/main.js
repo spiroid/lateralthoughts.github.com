@@ -17,11 +17,11 @@ require.config({
 
 require(
 	[
-		'jquery', 'moment', 'rssAggregator', 'underscore', 
+		'jquery', 'moment', 'rssAggregator', 'underscore', 'localLinkFixer',
 		'text!tpl/expanded_blog_post.tpl', 'text!tpl/footer_blog_post.tpl',
 		'bootstrap'
 	], 
-	function($, moment, rss, _, expandedPostTemplate, footerPostTemplate) {
+	function($, moment, rss, _, localLinkFixer, expandedPostTemplate, footerPostTemplate) {
 
 		var $expanded_posts = $('#full_rss_version'),
 			$footer_posts = $('#last_posts'),
@@ -49,4 +49,9 @@ require(
 			$('ul', $footer_posts),
 			footerPostTemplate
 		);
+
+		if (document.location.hostname === 'localhost') {
+			console.log('Fixing all hyperlinks so you can safely browse, sir!');
+			localLinkFixer.htmlifyLinks();
+		}
 });

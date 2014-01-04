@@ -15,7 +15,7 @@
     <link href="css/application.css" rel="stylesheet">
 	<link href="css/slider.css" rel="stylesheet">
 	<link href="css/hands-on.css" rel="stylesheet">
-	<script src="js/jquery-1.7.2.min.js"></script>
+	
 
 	<link href='http://fonts.googleapis.com/css?family=Merienda' rel='stylesheet' type='text/css'>
 
@@ -162,11 +162,11 @@ Notez enfin que vous pouvez aussi bénéficier du DIF pour ces ateliers !
 <div class="push"></div>
 
 
-	<div class="extra">
+<div class="extra">
 
-		<div class="extra-inner">
+	<div class="extra-inner">
 
-			<div class="container">
+		<div class="container">
 			<div class="row ">
 					<div class="span4">
 					<h2>Derniers tweets</h2>
@@ -174,15 +174,15 @@ Notez enfin que vous pouvez aussi bénéficier du DIF pour ces ateliers !
 					 		<p><a class="twitter-timeline" href="https://twitter.com/LateraIThoughts" data-widget-id="348881595052208129">Tweets by @LateraIThoughts</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
 						</div>
-
 					</div>
+
 
 					<div class="span4">
 						<h2>Derniers posts</h2>
-						<div class="post_results" id="last_posts" rss_num="5" rss_url="8084f9eb3525e9a64afd2b3ae5defc01">
-				            <div class="loading_rss">
-				                <img alt="Loading..." src="img/ajax-loader.gif" />
-				            </div>
+						<div class="post_results" id="last_posts" data-rss-num="5">
+				            <ul>
+				                <li class="loading_rss"><img alt="Loading..." src="img/ajax-loader.gif" /></li>
+				            </ul>
 				        </div>
 					</div>
 					
@@ -191,8 +191,7 @@ Notez enfin que vous pouvez aussi bénéficier du DIF pour ces ateliers !
 						<div>
 						<a href="http://twitter.com/lateraithoughts"><img src="img/twitter.png"></a> 
 						<a href="http://www.linkedin.com/company/lateraithoughts"><img src="img/LinkedIn.png"></a> 
-						<a href="/contact"><img src="img/mail.png"></a>
-						<a href="http://www.google.com/reader/public/atom/user%2F05171757434990369105%2Flabel%2FLateral-Thoughts"><img src="img/rss32x32.png"></a>
+						<a href="http://www.lateral-thoughts.com/contact"><img src="img/mail.png"></a>
 						</div>
 					</div>					
 				</div> <!-- /.row -->	
@@ -216,10 +215,7 @@ Notez enfin que vous pouvez aussi bénéficier du DIF pour ces ateliers !
     				<ul>
 						<li><a href="/vision">Nos valeurs</a></li>
     					<li><a href="https://twitter.com/lateraithoughts">Twitter</a></li>
-    					<li><a href="/blog">Blog</a></li>
-						<li><a href="http://lateralthoughts.github.com/Java-7-slides/slides.html">Java 7 slides</a>
-						</li>
-						<li><a href="http://lateralthoughts.github.com/parisjs/prez.html">Paris JS short prez</a></li>						
+    					<li><a href="/blog">Blog</a></li>					
     				</ul>
     				
     			</div> <!-- /span4 -->
@@ -251,7 +247,7 @@ Notez enfin que vous pouvez aussi bénéficier du DIF pour ces ateliers !
 		<div class="row">
 			
 			<div class="span6">
-				© 2012-2013 <a href="/">Lateral Thoughts</a>, tous droits réservés
+				© 2012-2014 <a href="/">Lateral Thoughts</a>, tous droits réservés
 			</div> <!-- /span6 -->
 			
 			<div id="builtby" class="span6">
@@ -262,8 +258,8 @@ Notez enfin que vous pouvez aussi bénéficier du DIF pour ces ateliers !
 	</div> <!-- /container -->
 	
 </div> <!-- /#footer -->
-<script type="text/javascript">
 
+<script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33016590-1']);
   _gaq.push(['_trackPageview']);
@@ -273,14 +269,7 @@ Notez enfin que vous pouvez aussi bénéficier du DIF pour ces ateliers !
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
 </body>
-<script src="js/bootstrap.js"></script>
-<script src="js/modernizr-2.5.3.min.js"></script>
-<script src="js/underscore.js"></script>
-<script src="js/jquery-Mustache.js"></script>
-<script src="js/mustache.js"></script>
-
-<script src="js/rssreader.js"></script>
+<script type="text/javascript" data-main="js/main" src="js/require.js"></script>
 </html>

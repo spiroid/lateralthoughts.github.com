@@ -18,7 +18,8 @@ require.config({
 require(
 	[
 		'jquery', 'moment', 'rssAggregator', 'underscore', 
-		'text!tpl/expanded_blog_post.tpl', 'text!tpl/footer_blog_post.tpl'
+		'text!tpl/expanded_blog_post.tpl', 'text!tpl/footer_blog_post.tpl',
+		'bootstrap'
 	], 
 	function($, moment, rss, _, expandedPostTemplate, footerPostTemplate) {
 

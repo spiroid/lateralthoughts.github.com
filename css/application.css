@@ -2647,3 +2647,16 @@ h1, h2 , h3, h4, h5, h6{
 font-weight: bold;
 font-size: 200%;
 }
+
+#last_posts ul {
+  padding: 15px;
+  background-color: white;
+  color: #292f33;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid rgb(232,232,232);
+}
+
+#last_posts li { border-bottom: 1px solid rgb(232,232,232);}
+#last_posts li:last-child { border:none;}
+#last_posts li:last-child p { margin:0;}

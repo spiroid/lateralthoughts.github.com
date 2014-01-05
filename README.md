@@ -28,6 +28,7 @@ And :surfer: to `http://localhost:8888`.
 :exclamation: Be sure you know what you're doing.
 
 ```
+ # push your changes (not the generated ones) BEFORE, and then:
  $ ./deploy.sh
 ```
 

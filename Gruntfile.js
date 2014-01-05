@@ -6,6 +6,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-html-minify');
 	grunt.loadNpmTasks('grunt-devserver');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	// generated source location (must end with slash!)
 	var finalSiteFolder = 'generated/';
@@ -75,6 +76,14 @@ module.exports = function(grunt) {
 				src: ['*.css', '!*.min.css'],
 				dest: finalSiteFolder + 'css/'
 			}
+		},
+		imagemin: { 
+			compressPics: {
+				expand: true,
+				cwd: finalSiteFolder + 'img/',
+				src: ['**/*.{png,jpg,gif}'],
+				dest: finalSiteFolder + 'img/'
+			}
 		}
 	});
 
@@ -84,6 +93,7 @@ module.exports = function(grunt) {
 		'uglify:compressJs', 
 		//'html_minify:compressHtml', // regression on team page!
 		'cssmin:compressCss', 
+		'imagemin:compressPics', 
 		'devserver'
 	]);
 
@@ -92,6 +102,7 @@ module.exports = function(grunt) {
 		'copy:main',
 		'uglify:compressJs',
 		//'html_minify:compressHtml', // regression on team page!
-		'cssmin:compressCss'
+		'cssmin:compressCss',
+		'imagemin:compressPics'
 	]);
 };

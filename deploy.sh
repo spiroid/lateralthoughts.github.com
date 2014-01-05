@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf generated
 grunt deploy
 git add -A generated
 git commit -m "New deploy!"

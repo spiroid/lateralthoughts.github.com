@@ -1,9 +1,13 @@
 module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-include-replace');
-	grunt.loadNpmTasks('grunt-devserver');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-html-minify');
+	grunt.loadNpmTasks('grunt-devserver');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
+	// generated source location (must end with slash!)
 	var finalSiteFolder = 'generated/';
 
 	grunt.initConfig({
@@ -40,9 +44,54 @@ module.exports = function(grunt) {
 					{expand: true, src: ['CNAME'], dest: finalSiteFolder}
 				]
 			}
+		},
+
+		uglify: {
+			compressJs: {
+				files: [{
+					expand: true,
+					cwd: finalSiteFolder,
+					src: ['js/*.js'],
+					dest: finalSiteFolder
+				}]
+			}
+		},
+
+		html_minify: {
+			options: {},
+			compressHtml: {
+				files: [{
+					expand: true,
+					cwd: finalSiteFolder,
+					src: ['*.html'],
+					dest: finalSiteFolder
+				}]
+			}
+		},
+		cssmin: {
+			compressCss: {
+				expand: true,
+				cwd: finalSiteFolder + 'css/',
+				src: ['*.css', '!*.min.css'],
+				dest: finalSiteFolder + 'css/'
+			}
 		}
 	});
 
-	grunt.registerTask('default', ['includereplace:resolve', 'copy:main', 'devserver']);
-	grunt.registerTask('deploy', ['includereplace:resolve', 'copy:main']);
+	grunt.registerTask('default', [
+		'includereplace:resolve', 
+		'copy:main', 
+		'uglify:compressJs', 
+		//'html_minify:compressHtml', // regression on team page!
+		'cssmin:compressCss', 
+		'devserver'
+	]);
+
+	grunt.registerTask('deploy', [
+		'includereplace:resolve', 
+		'copy:main',
+		'uglify:compressJs',
+		//'html_minify:compressHtml', // regression on team page!
+		'cssmin:compressCss'
+	]);
 };

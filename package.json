@@ -1,0 +1,10 @@
+{
+  "name": "www.lateral-thoughts.com",
+  "version": "2.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-include-replace": "~1.2.0",
+    "grunt-devserver": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0"
+  }
+}

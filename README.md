@@ -26,6 +26,7 @@ And :surfer: to `http://localhost:8888`.
 ## Deploying
 
 :exclamation: Be sure you know what you're doing.
+:poop: Do not push `generated` to this branch please :poop:
 
 ```
  # push your changes (not the generated ones) BEFORE, and then:

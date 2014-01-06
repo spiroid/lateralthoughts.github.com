@@ -26,6 +26,9 @@ And :surfer: to `http://localhost:8888`.
 ## Deploying
 
 :exclamation: Be sure you know what you're doing.
+
+:exclamation: Make sure `git subtree` is a valid command.
+
 :poop: Do not push `generated` to this branch please :poop:
 
 ```

@@ -3,7 +3,8 @@
 ## Required setup
 
   1. set up https://npmjs.org/
-  1. optional (unless you wanna deploy changes): make sure `git subtree` is a valid command
+  1. `npm install -g grunt-cli #sudo might be needed`
+  1. make sure `git subtree` is a valid command
 
 And then :squirrel:
 

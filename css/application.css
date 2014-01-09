@@ -2660,3 +2660,4 @@ font-size: 200%;
 #last_posts li { border-bottom: 1px solid rgb(232,232,232);}
 #last_posts li:last-child { border:none;}
 #last_posts li:last-child p { margin:0;}
+.extra a.footer_post_title { color:#0084b4;}

@@ -3,7 +3,8 @@
 ## Required setup
 
   1. set up https://npmjs.org/
-  1. optional (unless you wanna deploy changes): make sure `git subtree` is a valid command
+  1. `npm install -g grunt-cli #sudo might be needed`
+  1. make sure `git subtree` is a valid command
 
 And then :squirrel:
 
@@ -28,6 +29,9 @@ And :surfer: to `http://localhost:8888`.
 ## Deploying
 
 :exclamation: Be sure you know what you're doing.
+
+:exclamation: Make sure `git subtree` is a valid command.
+
 :poop: Do not push `generated` to this branch please :poop:
 
 ```

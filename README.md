@@ -9,8 +9,8 @@
 And then :squirrel:
 
 ```
- $ git checkout dev
  $ cd /path/to/lateralthoughts.github.com
+ $ git checkout dev
  $ npm install
 ```
 
@@ -19,8 +19,8 @@ And then :squirrel:
 Easy as:
 
 ```
- $ git checkout dev
  $ cd /path/to/lateralthoughts.github.com
+ $ git checkout dev
  $ grunt
 ```
 

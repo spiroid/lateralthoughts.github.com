@@ -1,0 +1,49 @@
+
+@import-once "../utils/commons";
+
+@clickableHeight: 54px;
+
+.lt-header-wrapper {
+  height: 111px; line-height: 111px;
+  text-align: center;
+}
+
+.lt-header {
+  display: inline-block;
+  width: @bodyWidth;
+  vertical-align: middle;
+
+  .lt-logo {
+    display: block;
+    float: left;
+    width: 167px; height: 61px;
+    background-color: grey;
+  }
+}
+
+.lt-tabs {
+  display: block;
+  float: right;
+}
+
+.lt-tab {
+  display: block;
+  float: left;
+  margin: 0 0 0 48px;
+}
+
+.lt-tab-link {
+  display: block;
+  height: @clickableHeight; line-height: @clickableHeight;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: grey;
+
+  &.lt-contact {
+    width: @clickableHeight;
+    background: grey;
+    border-radius: 50%;
+  }
+
+  .lt-mail-pic{ display: inline-block }
+}

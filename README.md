@@ -1,4 +1,4 @@
-# Intallation de l'environnement
+# Installation de l'environnement
 
 Installer `node`.
 

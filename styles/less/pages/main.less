@@ -22,12 +22,12 @@
 }
 .lt-catchphrase-wrapper {
   padding: 26px 42px;
-  background-color: red;
+  background-color: @redC0;
   overflow: auto;
 }
 .lt-catchphrase-text {
   float: left;
-  font-size: 45px;
+  font-size: 48px;
   line-height: 53px;
   color: #ffffff;
 }
@@ -44,7 +44,7 @@
   line-height: 55px;
   font-style: italic;
   color: white;
-  background-color: purple;
+  background-color: @purple72;
 }
 
 .lt-offers {
@@ -58,7 +58,7 @@
 }
 .lt-offer-title {
   margin: 15px 0 0 0;
-  font-size: 15px;
+  font-size: 18px;
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
@@ -66,7 +66,7 @@
 }
 .lt-offer-description {
   margin: 10px 0 0 0;
-  font-size: 15px;
+  font-size: 18px;
   text-transform: uppercase;
   text-align: center;
   color: white;
@@ -106,12 +106,14 @@
   margin: 0 0 0 30px;
 }
 .lt-innovation-title {
-  font-size: 32px;
+  font-size: 36px;
   color: purple;
+  font-weight: lighter;
 }
 .lt-innovation-description {
   margin: 15px 0 0 0;
-  font-size: 19px;
+  font-size: 16px;
+  font-weight: lighter;
   color: purple;
 }
 .lt-innovation-projects {
@@ -135,7 +137,7 @@
 
 .lt-references-title {
   margin: 45px 0 0 0;
-  font-size: 25px;
+  font-size: 26px;
   color: purple;
 }
 .lt-references {
@@ -152,45 +154,84 @@
 
 .lt-contact-wrapper {
   padding: 50px 0 50px 0;
-  background-color: purple;
+  background-color: @purple72;
   color: #ffffff;
 }
 .lt-contact-title {
   text-align: center;
-  font-size: 40px;
+  font-size: 48px;
 }
 .lt-contact-form {
   margin: 50px 0 0 0;
+  font-size: 0;
 }
 .lt-contact-input-inline {
   display: inline-block;
-  margin:  0 0 0 82px;
+  margin:  0 0 0 92px;
 
   &:first-child { margin: 0; }
 }
 .lt-contact-label {
   display: inline-block;
-  font-size: 17px;
+  font-size: 16px;
   margin: 0 0 10px 0;
 }
 .lt-contact-text-input {
   display: block;
-  width: 265px; height: 32px;
+  width: 263px; height: 30px;
+  border: 1px solid @purple56;
   border-radius: 4px;
-  border: 0;
-  outline: 0;
 }
 .lt-contact-msg {
   margin: 40px 0 0 0;
 }
 .lt-contact-textarea {
-  width: 100%; height: 112px;
+  width: 974px; height: 112px;
+  border: 1px solid @purple56;
+  border-radius: 4px;
 }
+@submitWidth: 281px;
+@submitHeight: 56px;
 .lt-contact-submit-wrapper {
+  position: relative;
+  width: @submitWidth; height: @submitHeight;
+  margin: 50px auto 0 auto;
   text-align: center;
 }
 .lt-contact-submit {
-  margin: 50px 0 0 0;
-  width: 283px; height: 58px;
+  position: absolute;
+  left: 0; top: 0;
+  width: @submitWidth; height: @submitHeight;
+  font-size: 0;
+  border: 1px solid white;
   border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(255,255,255,0);
+
+  transition: color 0.3s 0.1s, background-color 0.3s 0.1s;
+
+  &:hover {
+    color: @purple72;
+    background-color: rgba(255,255,255,1);
+  }
+
+  &:before {
+    display: inline-block;
+    width: 17px; height: 16px;
+    background-color: white;
+    vertical-align: middle;
+    content: "";
+  }
+
+  input& {
+    width: @submitWidth + 2px; height: @submitHeight + 2px;
+  }
+}
+.lt-contact-submit-label {
+  margin: 0 0 0 15px;
+  line-height: 56px;
+  font-size: 21px;
+  text-transform: uppercase;
+  vertical-align: middle;
 }

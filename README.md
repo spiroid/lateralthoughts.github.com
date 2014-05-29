@@ -57,9 +57,28 @@ En une ligne :
 
 # Run
 
-La version simple
+## Workflow de développement
 
-```bash
+```
+    $ glup clean build watch
+```
+
+La règle ```watch``` lance un serveur http qui écoute sur le port 9000.
+
+Les fichiers javascript et css ne sont pas minifiées pour faciliter le développement.
+
+Dans ce mode, Gulp réagit aux modifications apportées sur les fichiers et nodifie le serveur que des modifications ont été apportées. Grâce à [livereload](http://livereload.com/) les changements sont reflétés en direct dans la navigateur sans avoir à rafraichir la page.
+
+
+## Generation du site
+
+
+```
     $ gulp
 ```
 
+Qui est équivalent à ```gulp clean build ```.
+
+L'ensemble des tâches sont exécutées et les ressources générées sont copiées dans le répertoire ```dist```. Le site est maintenant prêt à être déployé.
+
+Pour en savoir en plus sur les commandes disponibles avec gulp, le plus simple est de naviguer dans le fichier [gulpfile.js](gulpfile.js) et de se familiariser avec la configuration, les plugins et les actions.

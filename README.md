@@ -8,4 +8,5 @@ Installer `less` :
 # Run
 
 Pour lancer le projet, il faut compiler les fichiers `less` :
-    lessc inputFile > outputFile
+    cd styles/less/pages
+    lessc inputFile.less > ../../outputFile.css

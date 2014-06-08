@@ -1,4 +1,18 @@
+# Node.js dependencies
+node_modules
+
+# Bower dependencies
+app/bower_components
+test/bower_components
+
+# Generated files
+dist
+.tmp
+
+# 
 charte
+
+# IDE files
 .idea
 *.iml
 

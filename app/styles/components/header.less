@@ -19,7 +19,6 @@
     display: block;
     float: left;
     width: 167px; height: 61px;
-    background-color: grey;
   }
 }
 
@@ -44,13 +43,18 @@
   text-decoration: none;
   color: @grey7C;
 
+  -webkit-transition: color 0.3s 0.1s;
+  -moz-transition: color 0.3s 0.1s;
+  -ms-transition: color 0.3s 0.1s;
   transition: color 0.3s 0.1s;
 
-  &:hover { color: @grey3F; }
+  &:hover {
+    color: @grey3F;
+    text-decoration: none;
+  }
 
   &.lt-contact {
     width: @clickableHeight;
-    background: grey;
     border-radius: 50%;
   }
 

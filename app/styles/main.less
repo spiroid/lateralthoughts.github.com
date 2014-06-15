@@ -1,6 +1,5 @@
 @import "utils/commons";
 @import "utils/reset";
-@import "utils/pictos";
 
 @import "components/header";
 @import "components/footer";
@@ -8,7 +7,7 @@
 
 .lt-pres-wrapper {
   padding: 30px 0;
-  background: no-repeat grey;
+  background: url("../images/bin/banner.jpg") no-repeat center center;
 }
 
 .lt-container {
@@ -34,7 +33,7 @@
   float: right;
   width: 281px; height: 132px;
   margin: 13px 0;
-  background: grey;
+  background: url("../images/bin/atom.png");
 }
 
 .lt-slogan {
@@ -52,7 +51,8 @@
 }
 .lt-offer-pic {
   margin: 30px auto 0 auto;
-  background-color: green;
+  font-size: 101px;
+  color: white;
   width: 101px; height: 101px;
 }
 .lt-offer-title {
@@ -197,6 +197,11 @@
   margin: 50px auto 0 auto;
   text-align: center;
 }
+.lt-contact-submit-pic {
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: middle;
+}
 .lt-contact-submit {
   position: absolute;
   left: 0; top: 0;
@@ -208,23 +213,14 @@
   color: white;
   background-color: rgba(255,255,255,0);
 
+  -webkit-transition: color 0.3s 0.1s, background-color 0.3s 0.1s;
+  -moz-transition: color 0.3s 0.1s, background-color 0.3s 0.1s;
+  -ms-transition: color 0.3s 0.1s, background-color 0.3s 0.1s;
   transition: color 0.3s 0.1s, background-color 0.3s 0.1s;
 
   &:hover {
     color: @purple72;
     background-color: rgba(255,255,255,1);
-  }
-
-  &:before {
-    display: inline-block;
-    width: 17px; height: 16px;
-    background-color: white;
-    vertical-align: middle;
-    content: "";
-  }
-
-  input& {
-    width: @submitWidth + 2px; height: @submitHeight + 2px;
   }
 }
 .lt-contact-submit-label {

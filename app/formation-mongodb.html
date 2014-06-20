@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lateral Thoughts - Formation MongoDb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/application.css" rel="stylesheet">
+	<link href="css/slider.css" rel="stylesheet">
+	
+
+	<link href='http://fonts.googleapis.com/css?family=Merienda' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body >
+
+
+@@include('includes/header.html')
+
+
+<div id="masthead">
+	
+	<div class="container">
+		
+		<div class="masthead-pad">
+			
+			<div class="masthead-text">
+				<h1>Formation</h1>
+				<p>Lateral Thoughts c’est avant tout des développeurs qui travaillent leur savoir-faire au jour le jour lors de missions de conseil ou directement sur nos propres produits. Nos formations sont en toute logique animées par des personnes du terrain qui se remettent à jour régulièrement. Nous aimons construire des applications modernes en tirant parti des technos les plus adaptées et nous sommes ravis de le partager.
+				</p>
+			</div> <!-- /.masthead-text -->
+		</div>
+		
+	</div> <!-- /.container -->	
+	
+</div> <!-- /#masthead -->
+
+
+
+
+<div id="content">
+
+	<div class="container ">
+	
+		<div class="row-fluid">
+			<div class="span12">
+				<img src="img/formations/mongodb.png" class="img-polaroid"/>
+				<h2>Formation : Mongodb</h2>
+
+				<div class="row-fluid">
+					<div class="span9 well">
+						<h6>A qui cette formation s'adresse-t-elle ?</h6>
+						<ul>
+							<li>C'est une formation orienté développeur et non une formation administrateur.</li>
+						</ul>
+						<h6>Objectifs</h6>
+						<ul>
+							<li>Comprendre les cas d'usage qui s'applique à MongoDb</li>
+							<li>Requêter vos données</li>
+							<li>Concevoir un schéma de données orienté document et apprendre à vivre sans transaction ou contraintes relationnelles</li>
+							<li>Optimiser vos performances</li>
+							<li>Manipuler le framework d'aggrégation</li>
+						</ul>
+						<h6>Méthode</h6>
+						<p>Les participants verront chaque notion puis pourront les mettre en pratique très rapidement via des exercices dont la difficulté augmentera graduellement.
+						Chaque projet fera l’objet d’une itération de 2H :
+						</p>							
+						<ul>
+							<li> 20 min de présentation de l’itération : présentation de l’exercice et des concepts à utiliser.</li>
+							<li> 1h 20 de pratique.</li>
+							<li> 20 min de rétrospective : présentation par les participants des difficultés rencontrées et de leur résolutions. </li>
+						</ul>
+						<p>La formation pourra s'effectuer en Python, en Java ou bien uniquement en Javascript via le mongoshell</p>	
+						<h6>Prérequis</h6>
+						<p>
+							Les participants devront connaitre le language de programmation utilisé pour interroger Mongo : python, ou java, ou javascript.
+							<br/>
+						</p>	
+
+						<hr/>
+						<h5>Plan</h5>	
+
+						<h6>Introduction a nosql et mongodb</h6>
+						Nosql, pourquoi faire ? <br/>
+						Panorama des solutions nosql<br/>
+						Mongodb, une base de données orienté document<br/>
+
+
+						<h6>Le requêtage sur Mongo</h6>
+						mongoshell<br/>
+						le bson<br/>
+						les opérateurs de sélection<br/>
+						les objets imbriqués<br/>
+						la mise a jour<br/>
+						les opérateurs de mise a jour<br/>
+						les upserts<br/>
+						la suppression<br/>
+
+						<h6>Designer son modèle avec Mongodb</h6>
+						les relations entre objets 1-1, 1-n et n-n<br/>
+						savoir quand imbriquer un objet<br/>
+						vivre sans contraintes d'intégrité<br/>
+						vivre sans transactions<br/>
+						les blobs et GridFS<br/>
+
+						<h6>Considérations sur les performances</h6>		
+						les index<br/>
+						les index multi clés<br/>
+						les sparse index<br/>
+						déterminer son chemin d'execution : explain<br/>
+						forcer un chemin d'execution (hint)<br/>
+						log et profiling<br/>
+
+						<h6>Le framework d'aggrégation</h6>		
+						le pipeline d'aggrégation<br/>
+						faire le parralèle avec le monde relationnel<br/>
+						group by<br/>
+						sum, average, max, min<br/>
+						la transformation<br/>
+						les filtres ($match)<br/>
+						les filtres bis ($limit et $skip)<br/>
+
+					</div>
+
+					<div class="span3">
+						<h3>Prix (inter entreprises)</h3>	
+						<span class="price">1490 € HT / personne</span>	
+						<h3>Durée</h3>	
+						<span class="length">3 jours</span>	<br/>
+
+						<strong>Audience</strong> : développeurs <br/>
+						<strong>Prix intra entreprises</strong> : Nous contacter<br/>
+						<strong>Formateurs</strong> : Hugo Lassiège <br/>
+
+						<a href="/contact" class="btn btn-large btn-success">Demander un devis</a>
+					</div>						
+				</div>				
+								
+				
+			</div>
+		</div>
+	</div> <!-- /.container -->
+
+</div> <!-- /#content -->
+
+
+
+<div class="push"></div>
+</div> <!-- /#wrapper -->
+
+
+
+@@include('includes/footer.html')
+</body>
+<script type="text/javascript" data-main="js/main" src="js/require.js"></script>
+</html>

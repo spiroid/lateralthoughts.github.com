@@ -8,11 +8,14 @@ test/bower_components
 # Generated files
 dist
 .tmp
+*.log
+*.orig
 
-# 
-charte
 
 # IDE files
+.classpath
+.settings
+.project
 .idea
 *.iml
 

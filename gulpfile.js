@@ -29,7 +29,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('fileinclude', function() {
-    return gulp.src(['app/*.html'])
+    return gulp.src(['app/templates/*.html'])
         .pipe($.fileInclude({
             prefix: '@@',
             basepath: '@file'
@@ -84,7 +84,6 @@ gulp.task('bower-files-fonts', function () {
 
 gulp.task('extras', function () {
     return gulp.src(['app/*.*', '!app/*.html'], { dot: true })
-        .pipe(gulp.dest('.tmp'))
         .pipe(gulp.dest('dist'));
 });
 
@@ -147,7 +146,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
         server.changed(file.path);
     });
 
-    gulp.watch('app/*.html', ['fileinclude']);
+    gulp.watch('app/templates/**/*.html', ['fileinclude']);
     gulp.watch('app/styles/**/*.less', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);

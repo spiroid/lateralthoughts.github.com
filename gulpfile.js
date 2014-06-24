@@ -28,11 +28,21 @@ gulp.task('scripts', function () {
         .pipe($.size());
 });
 
-gulp.task('html', ['styles', 'scripts'], function () {
+gulp.task('fileinclude', function() {
+    return gulp.src(['app/*.html'])
+        .pipe($.fileInclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('.tmp/'))
+        .pipe($.size());
+});
+
+gulp.task('html', ['styles', 'scripts', 'fileinclude'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
 
-    return gulp.src('app/*.html')
+    return gulp.src('.tmp/*.html')
         .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
         .pipe(jsFilter)
         .pipe($.uglify())
@@ -74,6 +84,7 @@ gulp.task('bower-files-fonts', function () {
 
 gulp.task('extras', function () {
     return gulp.src(['app/*.*', '!app/*.html'], { dot: true })
+        .pipe(gulp.dest('.tmp'))
         .pipe(gulp.dest('dist'));
 });
 
@@ -93,7 +104,7 @@ gulp.task('connect', function () {
         .use(require('connect-livereload')({ port: 35729 }))
         .use(connect.static('app'))
         .use(connect.static('.tmp'))
-        .use(connect.directory('app'));
+        .use(connect.directory('.tmp'));
 
     require('http').createServer(app)
         .listen(9000)
@@ -116,11 +127,11 @@ gulp.task('wiredep', function () {
         }))
         .pipe(gulp.dest('app/styles'));
 
-    gulp.src('app/*.html')
+    gulp.src('.tmp/*.html')
         .pipe(wiredep({
             directory: 'app/bower_components'
         }))
-        .pipe(gulp.dest('app'));
+        .pipe(gulp.dest('.tmp'));
 });
 
 gulp.task('watch', ['connect', 'serve'], function () {
@@ -128,7 +139,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
 
     // watch for changes
     gulp.watch([
-        'app/*.html',
+        '.tmp/*.html',
         '.tmp/styles/**/*.css',
         'app/scripts/**/*.js',
         'app/images/**/*'
@@ -136,6 +147,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
         server.changed(file.path);
     });
 
+    gulp.watch('app/*.html', ['fileinclude']);
     gulp.watch('app/styles/**/*.less', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);

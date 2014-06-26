@@ -79,7 +79,7 @@ gulp.task('html', ['styles', 'scripts', 'fileinclude'], function () {
 // Optimize image size
 // app/images/bin/**/* -> dist/images
 gulp.task('images', function () {
-    return gulp.src('app/images/bin/**/*')
+    return gulp.src('app/images/**/*')
         .pipe($.cache($.imagemin({
             optimizationLevel: 3,
             progressive: true,
@@ -89,16 +89,10 @@ gulp.task('images', function () {
         .pipe($.size());
 });
 
-gulp.task('icon-fonts', function () {
-  return gulp.src('app/images/icofont/**/*.{eot,svg,ttf,woff}')
-    .pipe($.flatten())
-    .pipe(gulp.dest('.tmp/fonts'))
-    .pipe($.size());
-});
-
-gulp.task('bower-files-fonts', function () {
+gulp.task('fonts', function () {
     return $.bowerFiles()
         .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
+        .pipe($.addSrc('app/fonts/**/*.{eot,svg,ttf,woff}'))
         .pipe($.flatten())
         .pipe(gulp.dest('dist/fonts'))
         .pipe($.size());
@@ -106,14 +100,25 @@ gulp.task('bower-files-fonts', function () {
 
 gulp.task('extras', function () {
     return gulp.src(['app/*.*', '!app/*.html'], { dot: true })
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe($.size());
+});
+
+gulp.task('old-resources', function () {
+    return gulp.src(['app/css/**/*.*',
+                     'app/img/**/*.*',
+                     'app/font/**/*.*',
+                     'app/js/**/*.*'],
+                    { base: './app' })
+        .pipe(gulp.dest('dist'))
+        .pipe($.size());
 });
 
 gulp.task('clean', function () {
-    return gulp.src([' ', 'dist'], { read: false }).pipe($.clean());
+    return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'images', 'bower-files-fonts', 'icon-fonts', 'extras']);
+gulp.task('build', ['html', 'images', 'fonts', 'extras', 'old-resources']);
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');
@@ -134,7 +139,7 @@ gulp.task('connect', function () {
         });
 });
 
-gulp.task('serve', ['connect', 'styles', 'icon-fonts'], function () {
+gulp.task('serve', ['connect', 'styles', 'fileinclude'], function () {
     require('opn')('http://localhost:9000');
 });
 
@@ -155,7 +160,7 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('app/templates'));
 });
 
-gulp.task('watch', ['connect', 'serve'], function () {
+gulp.task('watch', ['serve'], function () {
     var server = $.livereload();
 
     // watch for changes
@@ -163,7 +168,11 @@ gulp.task('watch', ['connect', 'serve'], function () {
         '.tmp/*.html',
         '.tmp/styles/**/*.css',
         'app/scripts/**/*.js',
-        'app/images/**/*'
+        'app/images/**/*',
+        'app/css/**/*.*',
+        'app/img/**/*.*',
+        'app/font/**/*.*',
+        'app/js/**/*.*',
     ]).on('change', function (file) {
         server.changed(file.path);
     });

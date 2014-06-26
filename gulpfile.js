@@ -7,6 +7,8 @@ var gutil = require('gulp-util');
 // load plugins
 var $ = require('gulp-load-plugins')();
 
+// Process less stylesheet to css
+// app/styles/ -> ./tmp/styles
 gulp.task('styles', function () {
     var l = $.less({});
     l.on('error',function(e) {
@@ -21,6 +23,8 @@ gulp.task('styles', function () {
         .pipe($.size());
 });
 
+
+// Validate javascript files with jshint
 gulp.task('scripts', function () {
     return gulp.src(['app/scripts/**/*.js'])
         .pipe($.jshint())
@@ -28,6 +32,7 @@ gulp.task('scripts', function () {
         .pipe($.size());
 });
 
+// Process html template files
 gulp.task('fileinclude', function() {
     return gulp.src(['app/templates/*.html'])
         .pipe($.fileInclude({
@@ -38,6 +43,20 @@ gulp.task('fileinclude', function() {
         .pipe($.size());
 });
 
+
+// Build final html files for delivery
+// Which means it uses gulp useref plugin
+// to process resources list in build blocks
+// <!-- build:<type>(alternate search path) <path> -->
+// ... HTML Markup, list of script / link tags.
+// <!-- endbuild -->
+//
+// The transform operations are
+//  - js files minification with uglify https://github.com/terinjokes/gulp-uglify/
+//  - css files minification with csso https://github.com/ben-eb/gulp-csso
+//
+// At the end of the transformation pipe, useref concatanates the result
+// following rules described by the building blocks
 gulp.task('html', ['styles', 'scripts', 'fileinclude'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
@@ -56,6 +75,9 @@ gulp.task('html', ['styles', 'scripts', 'fileinclude'], function () {
         .pipe($.size());
 });
 
+
+// Optimize image size
+// app/images/bin/**/* -> dist/images
 gulp.task('images', function () {
     return gulp.src('app/images/bin/**/*')
         .pipe($.cache($.imagemin({
@@ -126,11 +148,11 @@ gulp.task('wiredep', function () {
         }))
         .pipe(gulp.dest('app/styles'));
 
-    gulp.src('.tmp/*.html')
+    gulp.src('app/templates/*.html')
         .pipe(wiredep({
             directory: 'app/bower_components'
         }))
-        .pipe(gulp.dest('.tmp'));
+        .pipe(gulp.dest('app/templates'));
 });
 
 gulp.task('watch', ['connect', 'serve'], function () {

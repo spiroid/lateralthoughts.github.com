@@ -122,19 +122,21 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 45px;
+  line-height: 45px;
   font-size: 0;
   text-align: center;
 }
-.lt-innovation-project-wrapper {
+.lt-innovation-project {
   display: inline-block;
   text-decoration: none;
 
   &:first-child { float: left; }
   &:last-child { float: right; }
-}
-.lt-innovation-project {
-  width: 110px; height: 45px;
-  background-color: grey;
+
+  > img {
+    vertical-align: bottom;
+  }
 }
 
 .lt-references-title {

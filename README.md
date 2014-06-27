@@ -59,9 +59,12 @@ En une ligne :
 
 ## Workflow de développement
 
+### Serveur HTTP local
 ```
-    $ glup clean build watch
+    $ glup watch
 ```
+
+Puis :surfer: sur `http://localhost:9000`.
 
 La règle ```watch``` lance un serveur http qui écoute sur le port 9000.
 
@@ -82,3 +85,28 @@ Qui est équivalent à ```gulp clean build ```.
 L'ensemble des tâches sont exécutées et les ressources générées sont copiées dans le répertoire ```dist```. Le site est maintenant prêt à être déployé.
 
 Pour en savoir en plus sur les commandes disponibles avec gulp, le plus simple est de naviguer dans le fichier [gulpfile.js](gulpfile.js) et de se familiariser avec la configuration, les plugins et les actions.
+
+
+# Deploying
+
+TODO: JDY, section à revoir
+
+:exclamation: Be sure you know what you're doing.
+
+:exclamation: Make sure `git subtree` is a valid command.
+
+:poop: Do not push `generated` to this branch please :poop:
+
+ $ git checkout dev
+ # push your changes (not the generated ones) BEFORE, and then:
+ $ ./deploy.sh
+```
+
+# Adding your blog feed
+
+Add your blog feed URL to `js/main.js` (`dev` branch).
+Preferably edit `blog.html` as well so people can choose to subscribe to your feed in particular.
+
+# Pull request
+
+:exclamation: Note you MUST send a Pull Request against `dev` and not `master` branch.

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lateral Thoughts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/application.css" rel="stylesheet">
+	<link href="css/slider.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Merienda' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body >
+
+
+@@include('includes/header.html')
+
+
+<div id="masthead">
+	
+	<div class="container">
+		
+		<div class="masthead-pad">
+			
+			<div class="masthead-text">
+				<h1>Blog</h1>
+				<p>Retrouvez ici la liste des billets publiés par les membres de LT.
+				<br/>
+				Cliquez sur leur fil RSS si vous souhaitez vous abonner à l'un d'entre eux.</p>
+			</div> <!-- /.masthead-text -->
+		</div>
+		
+	</div> <!-- /.container -->	
+	
+</div> <!-- /#masthead -->
+
+
+
+
+<div id="content">
+
+	<div class="container ">
+		<div class="row-fluid">
+		</div>
+	
+		
+		<div class="row-fluid">
+			<div class="span3 well">
+				<h2>Les bloggeurs</h2>
+				<div class="row-fluid">
+					<div class="span3">
+						<img src="img/membres/hugo.jpg" height="48" width="48" class="img-circle" />   
+					</div>
+					<div class="span9">
+						<i>Hugo Lassiège</i> <br/>
+						<a href="http://www.eventuallycoding.com/index.php/feed/" data-feed-src><img src="img/rss.png"/></a>
+					</div>
+				</div>
+				<br/>
+				
+				<div class="row-fluid">
+					<div class="span3">
+						<img src="img/membres/fbiville.jpg" height="48" width="48" class="img-circle" />   
+					</div>
+					<div class="span9">
+						Florent Biville<br/>
+						<a href="http://florent.biville.net/?feed/atom" data-feed-src><img src="img/rss.png"/></a>
+					</div>
+				</div>
+				
+				<br/>
+				<div class="row-fluid">
+					<div class="span3">
+						<img src="img/membres/jblemee.jpeg" height="48" width="48" class="img-circle" />   
+					</div>
+					<div class="span9">
+						Jean-Baptiste Lemée <br/>
+						<a href="http://www.java-freelance.fr/feed" data-feed-src><img src="img/rss.png"/></a>
+					</div>
+				</div>
+
+				<br/>
+				<div class="row-fluid">
+					<div class="span3">
+						<img src="img/membres/ogirardot.jpg" height="48" width="48" class="img-circle" />   
+					</div>
+					<div class="span9">
+						Olivier Girardot <br/>
+						<a href="http://ogirardot.wordpress.com/feed/" data-feed-src><img src="img/rss.png"/></a>
+					</div>
+				</div>
+
+			</div>
+			<div class="span9">
+				<h2>Les derniers articles</h2>
+			
+				<table class="table table-striped">
+                    <tbody class="post_results" id="full_rss_version" data-rss-num="10">
+                    	<tr>
+                    		<td>
+				            <div class="loading_rss">
+				                <img alt="Loading..." src="img/ajax-loader.gif" />
+				            </div>
+				        	</td>
+				        </tr>
+				     </tbody>       
+                  </table>
+			</div>
+		</div>		
+	</div> <!-- /.container -->
+
+</div> <!-- /#content -->
+
+
+
+<div class="push"></div>
+</div> <!-- /#wrapper -->
+
+
+
+@@include('includes/footer.html')
+</body>
+<script type="text/javascript" data-main="js/main" src="js/require.js"></script>
+</html>

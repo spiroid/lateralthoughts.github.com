@@ -9,14 +9,14 @@ La stack est composée des briques suivantes :
  * [bower](http://bower.io/) en charge de la résolution de dépendances
 
 
-## Installation de l'environnement
+# Installation de l'environnement
 
-### Node JS
+## Node JS
 
 Installer `node`.
 
 
-#### NVM
+### NVM
 
 Sous linux une méthode qui permet d'installer de manière isolée pour un utilisateur est de passer par [nvm](https://github.com/creationix/nvm).
 
@@ -34,7 +34,7 @@ Installation de nvm, par la [méthode manuelle](https://github.com/creationix/nv
 
 
 
-### Librairies Javascript
+## Librairies Javascript
 
 A la racine du projet :
 
@@ -43,7 +43,7 @@ A la racine du projet :
 ```
 
 
-### Dépendances Javascript / CSS
+## Dépendances Javascript / CSS
 
 Les libraires javascript et CSS nécessaires sont importées statiquement avec Bower.
 Ces dépendances sont définies dans le fichier bower.json à la racine de ce projet.
@@ -54,14 +54,30 @@ En une ligne :
     $ bower install
 ```
 
+# VirtualBox et Vagrant
 
-# Run
+En alternative à l'installation complète de l'environnement sur un poste de développement, il est possible de créer une machine virtuelle grâce à Vagrant.
+Cette machine virtuelle contiendra alors toutes les librairies et les applications nécessaires, nodejs, bower, gulp ...
 
-## Workflow de développement
+## Génération de la VM
 
-### Serveur HTTP local
 ```
-    $ glup watch
+   $ vagrant up
+```
+
+## Lancement du serveur HTTP
+
+```
+   $ vagrant ssh
+   $ cd /vagrant
+   $ gulp watch
+```
+
+# Workflow de développement
+
+## Serveur HTTP local
+```
+    $ gulp watch
 ```
 
 Puis :surfer: sur `http://localhost:9000`.
@@ -73,7 +89,7 @@ Les fichiers javascript et css ne sont pas minifiées pour faciliter le dévelop
 Dans ce mode, Gulp réagit aux modifications apportées sur les fichiers et nodifie le serveur que des modifications ont été apportées. Grâce à [livereload](http://livereload.com/) les changements sont reflétés en direct dans la navigateur sans avoir à rafraichir la page.
 
 
-## Generation du site
+# Generation du site
 
 
 ```

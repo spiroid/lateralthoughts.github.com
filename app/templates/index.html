@@ -151,29 +151,37 @@
           <div class="lt-container">
             <h3 class="lt-contact-title">Contactez nous</h3>
 
-            <form class="lt-contact-form" action="#" method="POST">
+            <form class="lt-contact-form" action="mailto:contact@lateral-thoughts.com" method="POST" accept-charset="utf-8" enctype="text/plain" >
               <div>
                 <div class="lt-contact-input-inline">
                   <label class="lt-contact-label" for="name">Votre nom et prénom</label>
-                  <input class="lt-contact-text-input" type="text" id="name" name="name" />
+                  <input class="lt-contact-text-input" type="text" id="name" name="name"
+                         maxlength="255" title="Votre nom" data-trigger="focus" rel="tooltip"
+                         data-placement="right" placeholder="Votre nom" required="required"/>
                 </div>
                 <div class="lt-contact-input-inline">
                   <label class="lt-contact-label" for="email">Votre email</label>
-                  <input class="lt-contact-text-input" type="text" id="email" name="email" />
+                  <input class="lt-contact-text-input" type="email" id="email" name="email"
+                         maxlength="255" title="john@doe.com" data-trigger="focus" rel="tooltip"
+                         data-placement="right" placeholder="john@doe.com" required="required"/>
                 </div>
                 <div class="lt-contact-input-inline">
                   <label class="lt-contact-label" for="phone">Votre numéro de téléphone</label>
-                  <input class="lt-contact-text-input" type="text" id="phone" name="phone" />
+                  <input class="lt-contact-text-input" type="tel" id="phone" name="phone"/>
                 </div>
               </div>
 
               <div class="lt-contact-msg">
                 <label class="lt-contact-label">Votre message</label>
-                <textarea class="lt-contact-textarea"></textarea>
+                <textarea class="lt-contact-textarea"
+                          title="Besoin de conseil, d'aide sur un projet, de formation ou interessé par notre incubateur ?"
+                          data-trigger="focus" rows="10" data-placement="right"
+                          placeholder="Besoin de conseil, d'aide sur un projet, de formation ou interessé par notre incubateur ?"
+                          required="required" value=""></textarea>
               </div>
 
               <div class="lt-contact-submit-wrapper">
-                <input id="lt-contact-submit" class="lt-contact-submit" type="submit" />
+                <input id="lt-contact-submit" class="lt-contact-submit" type="submit">
                 <label class="lt-contact-submit" for="lt-contact-submit">
                   <div class="lt-contact-submit-pic icon-send"></div>
                   <span class="lt-contact-submit-label">Envoyer</span>

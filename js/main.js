@@ -26,7 +26,6 @@ require(
 			$footer_posts = $('#last_posts'),
 			feedUrls = [
 				'http://www.eventuallycoding.com/index.php/feed/',
-				'http://florent.biville.net/?feed/atom',
 				'http://www.java-freelance.fr/feed',
 				'http://ogirardot.wordpress.com/feed/'
 			];

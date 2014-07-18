@@ -1,0 +1,62 @@
+
+@import "../utils/commons";
+
+@import "../utils/pictos";
+
+@clickableHeight: 54px;
+
+.lt-header-wrapper {
+  height: 111px; line-height: 111px;
+  text-align: center;
+}
+
+.lt-header {
+  display: inline-block;
+  width: @bodyWidth;
+  vertical-align: middle;
+
+  .lt-logo {
+    display: block;
+    float: left;
+    width: 167px; height: 61px;
+  }
+}
+
+.lt-tabs {
+  display: block;
+  float: right;
+  margin: 3px 0;
+}
+
+.lt-tab {
+  display: block;
+  float: left;
+  margin: 0 0 0 48px;
+}
+
+.lt-tab-link {
+  display: block;
+  height: @clickableHeight; line-height: @clickableHeight;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: @grey7C;
+
+  -webkit-transition: color 0.3s 0.1s;
+  -moz-transition: color 0.3s 0.1s;
+  -ms-transition: color 0.3s 0.1s;
+  transition: color 0.3s 0.1s;
+
+  &:hover {
+    color: @grey3F;
+    text-decoration: none;
+  }
+
+  &.lt-contact {
+    width: @clickableHeight;
+    border-radius: 50%;
+  }
+
+  .lt-mail-pic{ display: inline-block }
+}

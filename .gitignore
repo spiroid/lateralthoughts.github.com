@@ -1,16 +1,22 @@
-*/bin/*
-*/conf/*
-*/localhost/*
-*/target/*
-*/.settings/*
-*/.classpath
-*/.project
-*/.velocity.log
-.settings/*
-*.iml
-*.pmd
+# Node.js dependencies
+node_modules
+
+# Bower dependencies
+app/bower_components
+test/bower_components
+
+# Generated files
+dist
+.tmp
 *.log
-*.ipr
-*.iws
+*.orig
+
+
+# IDE files
+.classpath
+.settings
 .project
 .idea
+*.iml
+
+styles/*.css

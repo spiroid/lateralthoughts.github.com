@@ -88,6 +88,21 @@ Les fichiers javascript et css ne sont pas minifiées pour faciliter le dévelop
 
 Dans ce mode, Gulp réagit aux modifications apportées sur les fichiers et nodifie le serveur que des modifications ont été apportées. Grâce à [livereload](http://livereload.com/) les changements sont reflétés en direct dans la navigateur sans avoir à rafraichir la page.
 
+## Ajout d'icônes
+
+La solution utilisée pour les icônes est une "icofont". C'est donc une police dont les caractères sont des icônes.
+Il n'y a pas encore de méthode pour générer automatiquement cette police. Il faut donc procéder manuellement.
+
+* Mettres toutes les icônes **au format SVG** dans le dossier ```app/icons```.
+* Aller sur ```http://icomoon.io/app/#/select```.
+    * Clic sur ```Import icons```, et impoter toutes les icones du dossier ```app/icons```.
+    * Sélectionner les icones ajoutées (elles deviennent oranges).
+    * Clic sur ```Font``` en bas de l'écran.
+    * Clic sur ```Download```.
+* Créer un dossier ```icomoon```.
+* Dézipper le fichier ```icomoon.zip``` dedans.
+* Copier les quatre fichiers du dossier ```icomoon/fonts``` vers ```LE_PROJET/app/fonts```
+* Copier le contenu du fichier ```icomoon/style.css``` dans le fichier ```LE_PROJET/app/styles/utils/pictos.less```.
 
 # Generation du site
 

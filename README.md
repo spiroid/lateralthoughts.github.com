@@ -103,6 +103,7 @@ Il n'y a pas encore de méthode pour générer automatiquement cette police. Il 
 * Dézipper le fichier ```icomoon.zip``` dedans.
 * Copier les quatre fichiers du dossier ```icomoon/fonts``` vers ```LE_PROJET/app/fonts```
 * Copier le contenu du fichier ```icomoon/style.css``` dans le fichier ```LE_PROJET/app/styles/utils/pictos.less```.
+* Dans le fichier ```pictos.less```, dans la balise ```@font-face```, metre tous les chemins en absolu (donc en ajoutant un ```/``` devant).
 
 # Generation du site
 

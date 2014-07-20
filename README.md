@@ -94,7 +94,7 @@ La solution utilisée pour les icônes est une "icofont". C'est donc une police 
 Il n'y a pas encore de méthode pour générer automatiquement cette police. Il faut donc procéder manuellement.
 
 * Mettres toutes les icônes **au format SVG** dans le dossier ```app/icons```.
-* Aller sur ```http://icomoon.io/app/#/select```.
+* Aller sur [Icomoon](http://icomoon.io/app/#/select).
     * Clic sur ```Import icons```, et impoter toutes les icones du dossier ```app/icons```.
     * Sélectionner les icones ajoutées (elles deviennent oranges).
     * Clic sur ```Font``` en bas de l'écran.

@@ -1,9 +1,33 @@
+@import "variables";
 @import "utils/commons";
 @import "utils/reset";
 
 @import "components/header";
 @import "components/footer";
 
+.navbar .navbar-logo {
+  height: @navbar-height;
+  line-height: @navbar-height;
+
+  > img {
+    vertical-align:middle;
+  }
+}
+
+.lt-logo {
+  display: block;
+
+  > img {
+    width: 167px;
+    height: 61px;
+  }
+}
+
+.presentation {
+  margin-top: @navbar-height;
+  padding: 30px 0;
+  background: url("../images/banner.jpg") no-repeat center center;
+}
 
 .lt-pres-wrapper {
   padding: 30px 0;

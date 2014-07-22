@@ -6,11 +6,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+
         <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <!-- endbower -->
+        <link rel="stylesheet" href="styles/bootstrap.css">
         <!-- endbuild -->
 
         <!-- build:css styles/main.css -->
@@ -22,6 +21,38 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-logo lt-logo" href="/">
+                        <img src="images/lt_logo_red.svg" alt="Logo">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/training.html">nos formations</a></li>
+                        <li><a href="/projets.html">nos services</a></li>
+                        <li><a href="/equipe.html">équipe</a></li>
+                        <li><a href="/blog.html">blog</a></li>
+                        <li><a href="/vision.html">nos valeurs</a></li>
+                        <li>
+                            <a class="lt-contact" href="#form-contact">
+                                <div class="lt-mail-pic icon-enveloppe"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div><!-- /.nav-bar -->
+
+        <!--
         <div class="lt-header-wrapper">
             <div class="lt-header">
                 <a class="lt-logo-link" href="/">
@@ -34,67 +65,52 @@
                     <li class="lt-tab">
                         <a class="lt-tab-link" href="/projets.html">nos services</a>
                     </li>
-                    <li class="lt-tab">
-                        <a class="lt-tab-link" href="/equipe.html">équipe</a>
-                    </li>
-                    <li class="lt-tab">
-                        <a class="lt-tab-link" href="/blog.html">blog</a>
-                    </li>
-                    <li class="lt-tab">
-                        <a class="lt-tab-link" href="/vision.html">nos valeurs</a>
-                    </li>
-                    <li class="lt-tab">
-                        <a class="lt-tab-link lt-contact" href="#form-contact">
-                            <div class="lt-mail-pic icon-enveloppe"></div>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
+        -->
 
+        <header class="presentation">
+            <div class="container">
+                <div class="lt-catchphrase">
+                    <div class="lt-catchphrase-wrapper">
+                        <p class="lt-catchphrase-text">
+                          Nous créons des logiciels<br />
+                          de qualités et nous pouvons<br />
+                          vous aider à faire de même.
+                        </p>
+                    <div class="lt-catchphrase-pic"></div>
+                </div>
 
-        <div class="lt-pres-wrapper">
-          <div class="lt-container">
-            <div class="lt-catchphrase">
-              <div class="lt-catchphrase-wrapper">
-                <p class="lt-catchphrase-text">
-                  Nous créons des logiciels<br />
-                  de qualités et nous pouvons<br />
-                  vous aider à faire de même.
+                <p class="lt-slogan">
+                  Lateral Thoughts, c'est avant tout une vision : Passion, Innovation, Équité.
                 </p>
-                <div class="lt-catchphrase-pic"></div>
-              </div>
-            </div>
 
-            <p class="lt-slogan">
-              Lateral Thoughts, c'est avant tout une vision : Passion, Innovation, Équité.
-            </p>
-
-            <div class="lt-offers">
-              <div class="lt-offer lt-studio">
-                <a class="lt-offer-link" href="#form-contact">
-                  <div class="lt-offer-pic icon-lt_studio"></div>
-                  <h3 class="lt-offer-title">lateral studio</h3>
-                  <p class="lt-offer-description">nos forfaits</p>
-                </a>
-              </div>
-              <div class="lt-offer lt-training">
-                <a class="lt-offer-link" href="/training.html">
-                  <div class="lt-offer-pic icon-lt_training"></div>
-                  <h3 class="lt-offer-title">lateral training</h3>
-                  <p class="lt-offer-description">nos formations</p>
-                </a>
-              </div>
-              <div class="lt-offer lt-swat">
-                <a class="lt-offer-link" href="#form-contact">
-                  <div class="lt-offer-pic icon-lt_swat"></div>
-                  <h3 class="lt-offer-title">lateral swat</h3>
-                  <p class="lt-offer-description">notre prestation</p>
-                </a>
-              </div>
+                <div class="lt-offers">
+                  <div class="lt-offer lt-studio">
+                    <a class="lt-offer-link" href="#form-contact">
+                      <div class="lt-offer-pic icon-lt_studio"></div>
+                      <h3 class="lt-offer-title">lateral studio</h3>
+                      <p class="lt-offer-description">nos forfaits</p>
+                    </a>
+                  </div>
+                  <div class="lt-offer lt-training">
+                    <a class="lt-offer-link" href="/training.html">
+                      <div class="lt-offer-pic icon-lt_training"></div>
+                      <h3 class="lt-offer-title">lateral training</h3>
+                      <p class="lt-offer-description">nos formations</p>
+                    </a>
+                  </div>
+                  <div class="lt-offer lt-swat">
+                    <a class="lt-offer-link" href="#form-contact">
+                      <div class="lt-offer-pic icon-lt_swat"></div>
+                      <h3 class="lt-offer-title">lateral swat</h3>
+                      <p class="lt-offer-description">notre prestation</p>
+                    </a>
+                  </div>
+                </div>
             </div>
-          </div>
-        </div>
+        </header>
 
 
         <div class="lt-innovation-wrapper">
@@ -252,9 +268,9 @@
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/modernizr/modernizr.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

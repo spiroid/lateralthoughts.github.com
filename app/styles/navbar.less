@@ -380,6 +380,8 @@
   background-color: @navbar-default-bg;
   border-color: @navbar-default-border;
 
+  margin-bottom: 0;
+
   .navbar-brand {
     color: @navbar-default-brand-color;
     &:hover,
@@ -396,9 +398,16 @@
   .navbar-nav {
     > li > a {
       text-transform: uppercase;
-      font-size: @font-size-base;
+      font-size: @font-size-small;
       font-weight: bold;
       color: @navbar-default-link-color;
+      padding-left: 24px;
+      padding-right: 24px;
+
+      -webkit-transition: color 0.3s 0.1s;
+      -moz-transition: color 0.3s 0.1s;
+      -ms-transition: color 0.3s 0.1s;
+      transition: color 0.3s 0.1s;
 
       &:hover,
       &:focus {
@@ -616,4 +625,15 @@
     }
   }
 
+}
+
+
+// Navbar - LT specific
+.navbar .navbar-logo {
+  height: @navbar-height;
+  line-height: @navbar-height;
+
+  > img {
+    vertical-align:middle;
+  }
 }

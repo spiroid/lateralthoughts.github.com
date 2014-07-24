@@ -1,81 +1,84 @@
-
-@import "../utils/commons";
-
 @menuHeight: 40px;
 
-
-.lt-footer-wrapper {
+// Footer style
+.page-footer {
   padding: 25px 0;
   background-color: @redC0;
-}
-.lt-float-wrapper {
-  overflow: auto;
-}
+  color: #fff;
 
-.lt-footer-menu {
-  float: left;
-  font-size: 0;
-}
-.lt-footer-menu-item {
-  display: inline-block;
-  height: @menuHeight; line-height: @menuHeight;
-  margin: 0 0 0 40px;
-  vertical-align: middle;
-
-  &:first-child { margin: 0; }
-}
-.lt-footer-menu-item-link {
-  display: block;
-  font-size: 14px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  opacity: 0.7;
-
-  &:hover {
+  a {
+    font-weight: bold;
     color: white;
-    text-decoration: none;
-    opacity: 0.9;
+    opacity: 0.7;
+
+    &:hover {
+      color: white;
+      text-decoration: none;
+      opacity: 0.9;
+    }
+
+    -webkit-transition: opacity 0.3s 0.1s;
+    -moz-transition: opacity 0.3s 0.1s;
+    -ms-transition: opacity 0.3s 0.1s;
+    transition: opacity 0.3s 0.1s;
   }
 
-  -webkit-transition: opacity 0.3s 0.1s;
-  -moz-transition: opacity 0.3s 0.1s;
-  -ms-transition: opacity 0.3s 0.1s;
-  transition: opacity 0.3s 0.1s;
-}
-
-.logo {
-  width: 108px; height: @menuHeight;
-
-  .lt-footer-menu-item-link {
+  .footer-menu {
+    float: left;
     font-size: 0;
+    padding-left: 0;
   }
 
-  img {
-    display: block;
+  .footer-menu-item {
+    display: inline-block;
+    height: @menuHeight;
+    line-height: @menuHeight;
+    margin: 0 0 0 40px;
+    vertical-align: middle;
+
+    &:first-child { margin: 0; }
+
+    a {
+      display: block;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+
+  .logo {
     width: 108px; height: @menuHeight;
+
+    img {
+      display: block;
+      width: 108px; height: @menuHeight;
+    }
   }
 }
 
-.lt-footer-socials {
+
+
+// Social icons + menu
+.social-icons {
   float: right;
   font-size: 0;
 }
-.lt-footer-social {
+
+.social-icon {
   display: inline-block;
   margin: 0 0 0 11px;
   border-radius: 50%;
 
-  .lt-footer-menu-item-link {
+  a {
     font-size: 32px;
     line-height: @menuHeight;
     font-weight: normal;
   }
 }
-.lt-footer-copyright {
+
+
+.copyright {
   clear: both;
   margin: 20px 0 0 0;
   opacity: 0.6;
-  color: white;
 }

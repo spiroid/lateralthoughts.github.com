@@ -16,7 +16,7 @@ gulp.task('styles', function () {
         l.end();
     });
 
-    return gulp.src('app/styles/main.less')
+    return gulp.src(['app/styles/main.less', 'app/styles/bootstrap.less'])
         .pipe(l)
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('.tmp/styles'))

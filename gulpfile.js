@@ -1,11 +1,10 @@
 'use strict';
 // generated on 2014-05-27 using generator-gulp-webapp 0.1.0
-
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 
 // load plugins
 var $ = require('gulp-load-plugins')();
+var gutil = require('gulp-load-utils')(['log']);
 
 // Process less stylesheet to css
 // app/styles/ -> ./tmp/styles
@@ -62,7 +61,7 @@ gulp.task('html', ['styles', 'scripts', 'fileinclude'], function () {
     var cssFilter = $.filter('**/*.css');
 
     return gulp.src('.tmp/*.html')
-        .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
+        .pipe($.useref.assets({searchPath: '{.tmp,app}'}).on("error", gutil.log))
         .pipe(jsFilter)
         .pipe($.uglify())
         .pipe(jsFilter.restore())

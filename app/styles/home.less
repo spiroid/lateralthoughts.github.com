@@ -8,12 +8,15 @@
 
 // Presentation section
 .home > .presentation {
-  background: url("../images/banner.jpg") no-repeat center center;
+  background-image: url("../images/banner.jpg");
+  background-size: cover;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: @grid-float-breakpoint) {
   .team-img, .innovation-block {
-    margin: 15px auto;
+    margin: 40px auto;
     max-width: 500px;
   }
 }
@@ -29,8 +32,9 @@
   line-height: 53px;
 }
 .catchphrase-pic {
-  width: 281px; height: 132px;
-  margin: 13px 0;
+  width: 281px;
+  height: 132px;
+  margin: 13px;
   background: url("../images/atom.png");
 }
 
@@ -127,11 +131,22 @@
 }
 
 .references {
-  margin: 20px 0 0 0;
+  margin-top: 20px;
+
+  .thumbnail {
+    max-width: 145px;
+    min-width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
 .reference {
-  display: inline-block;
-  margin: 0 0 0 30px;
+  display: table-cell;
+  vertical-align: middle;
+  margin-bottom: 20px;
+  height: 140px;
+  width: 140px;
 }
 
 

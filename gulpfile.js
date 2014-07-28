@@ -42,6 +42,15 @@ gulp.task('fileinclude', function() {
         .pipe($.size());
 });
 
+gulp.task('assemble', function () {
+  gulp.src('app/templates/pages/*.hbs')
+    .pipe($.assemble({
+        data: 'data/*.json',
+        partials: 'app/templates/partials/*.hbs',
+        layoutdir: 'app/templates/layouts/'
+    }))
+    .pipe(gulp.dest('.tmp/'));
+});
 
 // Build final html files for delivery
 // Which means it uses gulp useref plugin

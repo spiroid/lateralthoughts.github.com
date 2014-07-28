@@ -29,7 +29,9 @@
     "gulp-add-src": "~0.1.1",
     "gulp-load-utils": "0.0.4",
     "chalk": "~0.5.1",
-    "dateformat": "~1.0.8-1.2.3"
+    "dateformat": "~1.0.8-1.2.3",
+    "gulp-assemble": "git://github.com/assemble/gulp-assemble",
+    "handlebars-helpers": "git://github.com/assemble/handlebars-helpers#v0.6.0"
   },
   "engines": {
     "node": ">=0.10.0"

@@ -48,7 +48,7 @@ gulp.task('assemble', function () {
         data: 'data/*.json',
         partials: 'app/templates/partials/*.hbs',
         layoutdir: 'app/templates/layouts/'
-    }))
+    }).on("error", gutil.log))
     .pipe(gulp.dest('.tmp/'));
 });
 
@@ -65,7 +65,7 @@ gulp.task('assemble', function () {
 //
 // At the end of the transformation pipe, useref concatanates the result
 // following rules described by the building blocks
-gulp.task('html', ['styles', 'scripts', 'fileinclude'], function () {
+gulp.task('html', ['styles', 'scripts', 'fileinclude', 'assemble'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
 
@@ -147,7 +147,7 @@ gulp.task('connect', function () {
         });
 });
 
-gulp.task('serve', ['connect', 'styles', 'fileinclude'], function () {
+gulp.task('serve', ['connect', 'styles', 'fileinclude', 'assemble'], function () {
     require('opn')('http://localhost:9000');
 });
 
@@ -185,7 +185,11 @@ gulp.task('watch', ['serve'], function () {
         server.changed(file.path);
     });
 
-    gulp.watch('app/templates/**/*.html', ['fileinclude']);
+    gulp.watch(['app/templates/*.html',
+                'app/templates/include/*.html'], ['fileinclude']);
+    gulp.watch(['app/templates/pages/*.hbs',
+                'app/templates/layouts/*.hbs',
+                'app/templates/partials/*.hbs'], ['assemble']);
     gulp.watch('app/styles/**/*.less', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);

@@ -17,7 +17,7 @@ require.config({
 
 require(
 	[
-		'jquery', 'moment', 'rssAggregator', 'underscore', 'localLinkFixer',
+		'jquery', 'moment', 'rssAggregator', 'underscore', 'localLinkFixer', 'wow'
 		'text!tpl/expanded_blog_post.tpl', 'text!tpl/footer_blog_post.tpl'
 	], 
 	function($, moment, rss, _, localLinkFixer, expandedPostTemplate, footerPostTemplate) {

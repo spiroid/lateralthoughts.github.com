@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen:300,400,700);
 
-body {
-  font-family: Oxygen, sans-serif;
+h2 {
+  color: @purple72;
 }
 
 // Utility, move now
@@ -17,3 +17,44 @@ body {
     height: 61px;
   }
 }
+
+.main {
+  background-color: @gray-super-light;
+  padding-bottom: 135px;
+
+  > .container {
+    background-color: white;
+  }
+}
+
+.main-top-header {
+  content: " ";
+  height: 20px;
+  background-color: @purple72;
+  margin-bottom: @grid-gutter-width;
+
+  /* Required for Down Triangle */
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom: 0;
+  }
+
+  /* Fill */
+  &:after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 11px solid #72214e;
+    margin-left: 300px;
+    margin-top: 20px;
+  }
+}
+
+main {
+  padding-bottom: @grid-gutter-width;
+}
+

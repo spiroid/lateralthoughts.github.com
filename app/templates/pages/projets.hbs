@@ -2,12 +2,13 @@
 layout: base.hbs
 type: projets
 title: L'incubateur
+icon: fa fa-flask
 subtitle: Vous avez une idée ? Mais ni le temps ni les moyens de la mettre en œuvre ? Nous pouvons vous aider !
 ---
     <header class="wrapper presentation">
         <div class="container">
             <div class="catchphrase">
-                    <div class="catchphrase-pic pull-right"></div>
+                    <i class="{{ icon }} catchphrase-icon pull-right"></i>
                     <h1 class="catchphrase-title">{{ title }}</h1>
                     <blockquote class="catchphrase-quote">{{ subtitle }}</blockquote>
             </div>
@@ -52,7 +53,7 @@ subtitle: Vous avez une idée ? Mais ni le temps ni les moyens de la mettre en �
                 Quelque-soit votre projet, nous pouvons le développer. Nous sommes une société composée de gens talentueux, habitués à démarrer des projets et à vous accompagner dans votre démarche
                 </p>
 
-                <div class="text-center">
+                <div class="see-more">
                     <a href="/incubateur.html" class="btn btn-primary">
                         <i class="fa fa-flask"></i>
                         &nbsp;

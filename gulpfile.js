@@ -161,7 +161,7 @@ gulp.task('wiredep', function () {
         }))
         .pipe(gulp.dest('app/styles'));
 
-    gulp.src('app/templates/*.html')
+    gulp.src(['app/templates/*.html', 'app/templates/**/*.hbs'])
         .pipe(wiredep({
             directory: 'app/bower_components'
         }))

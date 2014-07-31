@@ -9,94 +9,13 @@
     {{> navbar-top }}
 
     {{> body }}
-    <div class="wrapper contact">
-        <div class="container">
-            <h2 id="form-contact">Contactez nous</h2>
-            <form class="contact-form" action="mailto:contact@lateral-thoughts.com" method="POST" accept-charset="utf-8" enctype="text/plain" >
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label for="name">Votre nom et prénom</label>
-                            <input class="form-control" type="text" id="name" name="name"
-                                   maxlength="255" title="Votre nom" data-trigger="focus" rel="tooltip"
-                                   data-placement="right" placeholder="Votre nom" required="required"/>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label for="email">Votre email</label>
-                            <input class="form-control" type="email" id="email" name="email"
-                                   maxlength="255" title="john@doe.com" data-trigger="focus" rel="tooltip"
-                                   data-placement="right" placeholder="john@doe.com" required="required"/>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label for="phone">Votre numéro de téléphone</label>
-                            <input class="form-control" type="tel" id="phone" name="phone"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group contact-message">
-                    <label>Votre message</label>
-                    <textarea class="form-control"
-                              title="Besoin de conseil, d'aide sur un projet, de formation ou interessé par notre incubateur ?"
-                              data-trigger="focus" rows="10" data-placement="right"
-                              placeholder="Besoin de conseil, d'aide sur un projet, de formation ou interessé par notre incubateur ?"
-                              required="required" value=""></textarea>
-                </div>
-                <div class="contact-submit-wrapper">
-                    <input id="contact-submit" class="contact-submit" type="submit">
-                    <label class="contact-submit" for="contact-submit">
-                        <div class="contact-submit-pic icon-send"></div>
-                        <span class="contact-submit-label">Envoyer</span>
-                    </label>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <footer class="wrapper page-footer">
-        <div class="container">
-            <div class="float-wrapper">
-                <ul class="footer-menu">
-                    <li class="footer-menu-item logo">
-                        <a href="/">
-                            <img src="images/lt_logo_grey.svg" alt="Logo Lateral Thoughts">
-                        </a>
-                    </li>
-                    <li class="footer-menu-item">
-                        <a href="/formations.html">nos formations</a>
-                    </li>
-                    <li class="footer-menu-item">
-                        <a href="/formateurs.html">nos formateurs</a>
-                    </li>
-                    <li class="footer-menu-item">
-                        <a href="/incubateur.html">incubateur</a>
-                    </li>
-                    <li class="footer-menu-item">
-                        <a href="/contact.html">task force</a>
-                    </li>
-                </ul>
-
-                <ul class="social-icons pull-right">
-                    <li class="social-icon github">
-                        <a class="icon-github" href="https://github.com/LateralThoughts" target="_blank"></a>
-                    </li>
-                    <li class="social-icon twitter">
-                        <a class="icon-twitter" href="https://twitter.com/LateraIThoughts" target="_blank"></a>
-                    </li>
-                </ul>
-            </div>
-
-            <p class="copyright clearfix">&#169; 2014 Lateral Thoughts, tous droits réservés.</p>
-        </div>
-    </footer>
+    {{> contact-form }}
+    {{> footer }}
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-33016590-1']);
+        _gaq.push(['_setAccount', '{{analytics.id}}']);
         _gaq.push(['_trackPageview']);
 
         (function() {
@@ -111,6 +30,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/WOW/dist/wow.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

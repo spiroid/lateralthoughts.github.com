@@ -1,3 +1,12 @@
+// Presentation section
+.home > .presentation {
+  // Fallback for browsers that don't support calc()
+  min-height: 100%;
+  min-height: calc(~"100% - "@navbar-height);
+  background: url("../img/bg3.jpg") no-repeat center center;
+  background-size: cover;
+}
+
 @media (max-width: @grid-float-breakpoint) {
   .team-img, .innovation-block {
     margin: 40px auto;
@@ -10,6 +19,7 @@
   padding-bottom: @grid-gutter-width;
 }
 
+// Catchphrase
 .catchphrase-pic {
   width: 281px;
   height: 132px;
@@ -33,6 +43,7 @@
 .offers {
   position: relative;
   text-align: center;
+  padding-top: 40px;
 
   .offer {
     > a:hover {

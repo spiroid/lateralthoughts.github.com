@@ -155,11 +155,11 @@ gulp.task('wiredep', function () {
         }))
         .pipe(gulp.dest('app/styles'));
 
-    gulp.src(['app/templates/**/*.hbs', 'app/templates/*.html'])
+    gulp.src(['app/templates/*.html', 'app/templates/**/*.hbs'])
         .pipe(wiredep({
             directory: 'app/bower_components'
         }))
-        .pipe(gulp.dest('app/templates/'));
+        .pipe(gulp.dest('app/templates'));
 });
 
 gulp.task('watch', ['serve'], function () {

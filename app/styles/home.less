@@ -1,11 +1,3 @@
-// Homepage, all wrappers
-.home > .wrapper {
-  padding: 40px 0;
-  color: white;
-}
-
-
-
 // Presentation section
 .home > .presentation {
   // Fallback for browsers that don't support calc()
@@ -22,16 +14,12 @@
   }
 }
 
+// Presentation section
+.home > .wrapper.presentation {
+  padding-bottom: @grid-gutter-width;
+}
+
 // Catchphrase
-.catchphrase {
-  padding: 25px 35px;
-  background-color: @redC0;
-  overflow: auto;
-}
-.catchphrase-text {
-  font-size: 48px;
-  line-height: 53px;
-}
 .catchphrase-pic {
   width: 281px;
   height: 132px;
@@ -46,6 +34,7 @@
   font-size: 28px;
   line-height: 55px;
   font-style: italic;
+  color: white;
   background-color: @purple72;
 }
 
@@ -128,7 +117,7 @@
 
 // References section
 .home > .lt-references {
-  background-color: @lightGrey;
+  background-color: @gray-super-light;
   color: purple;
 }
 
@@ -149,89 +138,4 @@
   margin-bottom: 20px;
   height: 140px;
   width: 140px;
-}
-
-
-
-// Contact section
-.home > .contact {
-  background-color: @purple72;
-  color: #ffffff;
-
-  h2 {
-    font-size: 48px;
-    text-align: center;
-    color: #ffffff;
-  }
-
-  label {
-    font-weight: normal;
-  }
-
-  .form-control {
-    border-color: @purple56;
-    font-size: @font-size-small;
-
-    &:focus {
-        border-color: @purple56;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
-    }
-  }
-
-  .contact-message {
-    margin-top: 25px;
-  }
-
-  .contact-form {
-    margin-top: 50px;
-  }
-}
-
-
-
-// Contact submit button
-@submitWidth: 281px;
-@submitHeight: 56px;
-
-.contact-submit-wrapper {
-  position: relative;
-  width: @submitWidth;
-  height: @submitHeight;
-  margin: 50px auto 0 auto;
-  text-align: center;
-}
-.contact-submit-pic {
-  display: inline-block;
-  font-size: 16px;
-  vertical-align: middle;
-}
-.contact-submit {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: @submitWidth;
-  height: @submitHeight;
-  font-size: 0;
-  border: 1px solid white;
-  border-radius: 4px;
-  cursor: pointer;
-  color: white;
-  background-color: rgba(255,255,255,0);
-
-  -webkit-transition: color 0.3s 0.1s, background-color 0.3s 0.1s;
-  -moz-transition: color 0.3s 0.1s, background-color 0.3s 0.1s;
-  -ms-transition: color 0.3s 0.1s, background-color 0.3s 0.1s;
-  transition: color 0.3s 0.1s, background-color 0.3s 0.1s;
-
-  &:hover {
-    color: @purple72;
-    background-color: rgba(255,255,255,1);
-  }
-}
-.contact-submit-label {
-  margin: 0 0 0 15px;
-  line-height: 56px;
-  font-size: 21px;
-  text-transform: uppercase;
-  vertical-align: middle;
 }

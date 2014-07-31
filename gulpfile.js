@@ -9,14 +9,8 @@ var gutil = require('gulp-load-utils')(['log']);
 // Process less stylesheet to css
 // app/styles/ -> ./tmp/styles
 gulp.task('styles', function () {
-    var l = $.less({});
-    l.on('error',function(e) {
-        gutil.log(e);
-        l.end();
-    });
-
     return gulp.src(['app/styles/main.less', 'app/styles/bootstrap.less'])
-        .pipe(l)
+        .pipe($.less({}).on('error', gutil.log))
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('.tmp/styles'))
         .pipe($.size());

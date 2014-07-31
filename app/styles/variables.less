@@ -13,11 +13,20 @@
 @gray-light:             lighten(#000, 60%);   // #999
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-primary:         #428bca;
-@brand-success:         #5cb85c;
-@brand-info:            #5bc0de;
-@brand-warning:         #f0ad4e;
-@brand-danger:          #d9534f;
+// LT - Specific
+@gray-super-light:       #F1F1F1;
+@grey7C:                 #7C8988;
+@grey3F:                 #3F4645;
+@redC0:                  #C00046;
+@purple56:               #56193B;
+@purple72:               #72214E;
+
+// @brand-primary:          #428bca;
+@brand-primary:          @redC0;
+@brand-success:          #5cb85c;
+@brand-info:             #5bc0de;
+@brand-warning:          #f0ad4e;
+@brand-danger:           #d9534f;
 
 
 //== Scaffolding
@@ -30,7 +39,7 @@
 @text-color:            @gray-dark;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @grey7C;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 
@@ -39,7 +48,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  Oxygen, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -293,7 +302,7 @@
 //** Number of columns in the grid.
 @grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:         30px;
+@grid-gutter-width:         40px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 @grid-float-breakpoint:     @screen-md-min;
@@ -744,16 +753,16 @@
 //
 //##
 
-@breadcrumb-padding-vertical:   8px;
+@breadcrumb-padding-vertical:   floor((@grid-gutter-width / 2));
 @breadcrumb-padding-horizontal: 15px;
 //** Breadcrumb background color
 @breadcrumb-bg:                 #f5f5f5;
 //** Breadcrumb text color
 @breadcrumb-color:              #ccc;
 //** Text color of current page in the breadcrumb
-@breadcrumb-active-color:       @gray-light;
+@breadcrumb-active-color:       @redC0;
 //** Textual separator for between breadcrumb elements
-@breadcrumb-separator:          "/";
+@breadcrumb-separator:          ">";
 
 
 //== Carousel
@@ -829,10 +838,3 @@
 @component-offset-horizontal: 180px;
 
 
-// LT - Specific
-@grey7C: #7C8988;
-@grey3F: #3F4645;
-@redC0: #C00046;
-@purple56: #56193B;
-@purple72: #72214E;
-@lightGrey: #F1F1F1;

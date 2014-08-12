@@ -2,6 +2,21 @@
 
 console.log('\'Allo \'Allo!');
 
+$('.bio-trigger').on('click', function(e) {
+    var person = $(e.target).closest('.person');
+    if(person) {
+        var title = person.find('.person-title').html() || '';
+        var content = person.find('.bio').html() || '';
+        var tags = person.find('.tags').html() || '';
+        var image = person.find('.person-picture').attr('src') || '';
+
+        $('#modal-bio .modal-title').html(title);
+        $('#modal-bio .bio').html(content);
+        $('#modal-bio .modal-footer').html(tags);
+        $('#modal-bio .modal-image').attr('src', image);
+    }
+});
+
 
 // Over state of Studio, Swat, Training.
 var offerRollover = function(offerName) {
@@ -11,13 +26,13 @@ var offerRollover = function(offerName) {
     $(this).find('.offer-pic').addClass('icon-lt_' + offerName).removeClass('icon-lt_offer_rollover');
   });
 };
-
 offerRollover('studio');
 offerRollover('training');
 offerRollover('swat');
 
 
-$("a[href^='#']").on('click', function(e) {
+// Animated scroll for links with anchors
+$('a[href^=\'#\']').on('click', function(e) {
 
    // prevent default anchor click behavior
    e.preventDefault();
@@ -38,3 +53,4 @@ $("a[href^='#']").on('click', function(e) {
 });
 
 new WOW().init();
+

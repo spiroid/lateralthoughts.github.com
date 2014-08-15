@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('\'Allo \'Allo!');
-
 $('.bio-trigger').on('click', function(e) {
     var person = $(e.target).closest('.person');
     if(person) {
@@ -32,6 +30,7 @@ offerRollover('swat');
 
 
 // Animated scroll for links with anchors
+/*
 $('a[href^=\'#\']').on('click', function(e) {
 
    // prevent default anchor click behavior
@@ -51,6 +50,6 @@ $('a[href^=\'#\']').on('click', function(e) {
      });
 
 });
+*/
 
 new WOW().init();
-

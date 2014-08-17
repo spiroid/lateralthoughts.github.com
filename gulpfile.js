@@ -11,7 +11,7 @@ var gutil = require('gulp-load-utils')(['log']);
 gulp.task('styles', function () {
     return gulp.src(['app/styles/main.less', 'app/styles/bootstrap.less'])
         .pipe($.less({}).on('error', gutil.log))
-        .pipe($.autoprefixer('last 1 version'))
+        .pipe($.autoprefixer('last 2 versions'))
         .pipe(gulp.dest('.tmp/styles'))
         .pipe($.size());
 });

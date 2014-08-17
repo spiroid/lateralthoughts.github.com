@@ -30,7 +30,6 @@ offerRollover('swat');
 
 
 // Animated scroll for links with anchors
-/*
 $('a[href^=\'#\']').on('click', function(e) {
 
    // prevent default anchor click behavior
@@ -50,6 +49,12 @@ $('a[href^=\'#\']').on('click', function(e) {
      });
 
 });
-*/
+
+$('.project .description').readmore({
+    moreLink: '<a href="#" style="text-align:center"><i class="fa fa-plus-circle fa-lg"></i> Voir plus</a>',
+    lessLink: '<a href="#" style="text-align:center"><i class="fa fa-minus-circle fa-lg"></i> Fermer</a>',
+    speed: 200,
+    maxHeight: 100
+});
 
 new WOW().init();

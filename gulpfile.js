@@ -37,13 +37,13 @@ gulp.task('fileinclude', function() {
 });
 
 gulp.task('assemble', function () {
-  gulp.src('app/templates/pages/*.hbs')
-    .pipe($.assemble({
-        data: 'data/*.json',
-        partials: 'app/templates/partials/*.hbs',
-        layoutdir: 'app/templates/layouts/'
-    }).on("error", gutil.log))
-    .pipe(gulp.dest('.tmp/'));
+    return gulp.src('app/templates/pages/*.hbs')
+        .pipe($.assemble({
+            data: 'data/*.json',
+            partials: 'app/templates/partials/*.hbs',
+            layoutdir: 'app/templates/layouts/'
+        }).on("error", gutil.log))
+        .pipe(gulp.dest('.tmp/'));
 });
 
 // Build final html files for delivery
@@ -115,7 +115,7 @@ gulp.task('clean', function () {
     return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'extras', 'old-resources']);
+gulp.task('build', ['images', 'fonts', 'extras', 'old-resources', 'html']);
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');

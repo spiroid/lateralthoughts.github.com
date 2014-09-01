@@ -60,21 +60,16 @@ gulp.task('assemble', function () {
 // At the end of the transformation pipe, useref concatanates the result
 // following rules described by the building blocks
 gulp.task('html', ['styles', 'scripts', 'fileinclude', 'assemble'], function () {
-    var jsFilter = $.filter('**/*.js');
-    var cssFilter = $.filter('**/*.css');
+    var assets = $.useref.assets({searchPath: '{.tmp,app}'})
 
     return gulp.src('.tmp/*.html')
-        .pipe($.useref.assets({searchPath: '{.tmp,app}'}).on("error", gutil.log))
-        .pipe(jsFilter)
-        .pipe($.uglify())
-        .pipe(jsFilter.restore())
-        .pipe(cssFilter)
-        .pipe($.csso())
-        .pipe(cssFilter.restore())
-        .pipe($.useref.restore())
+        .pipe(assets)
+        .pipe($.if('*.js', $.uglify()))
+        .pipe($.if('*.css', $.csso()))
+        .pipe(assets.restore())
         .pipe($.useref())
-        .pipe(gulp.dest('dist'))
-        .pipe($.size());
+        .pipe($.size())
+        .pipe(gulp.dest('dist'));
 });
 
 

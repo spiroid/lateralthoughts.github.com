@@ -19,7 +19,7 @@
     "gulp-load-plugins": "^0.5.0",
     "gulp-size": "^0.3.0",
     "gulp-uglify": "^0.2.1",
-    "gulp-useref": "^0.4.2",
+    "gulp-useref": "^1.0.0",
     "jshint-stylish": "^0.2.0",
     "opn": "^0.1.1",
     "wiredep": "^1.4.3",
@@ -31,7 +31,8 @@
     "chalk": "~0.5.1",
     "dateformat": "~1.0.8-1.2.3",
     "gulp-assemble": "git://github.com/assemble/gulp-assemble",
-    "handlebars-helpers": "git://github.com/assemble/handlebars-helpers#v0.6.0"
+    "handlebars-helpers": "git://github.com/assemble/handlebars-helpers#v0.6.0",
+    "gulp-if": "~1.2.4"
   },
   "engines": {
     "node": ">=0.10.0"

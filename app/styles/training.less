@@ -57,19 +57,28 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
 
+  .team-picture {
+    .person-picture;
+    border: 5px solid #fff;
+    height: 180px;
+    width: 180px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
   .person {
     margin-top: 20px;
     margin-bottom: 20px;
+
+    .person-title {
+      font-size: @font-size-large;
+      margin-top: 2px;
+    }
 
     .person-picture {
       border: 5px solid #fff;
       height: 80px;
       width: 80px;
-    }
-
-    .person-title {
-      font-size: @font-size-large;
-      margin-top: 2px;
     }
   }
 
@@ -158,6 +167,10 @@
         a {
             color: @turquoise;
             text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }

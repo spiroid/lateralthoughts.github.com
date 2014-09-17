@@ -1,40 +1,87 @@
 ---
 layout: page.hbs
 title: Catalogue des formations
-icon: icon-lt_training
+icon: fa fa-book
 subtitle: Nous aimons construire des applications modernes en tirant parti des technos les plus adaptées et nous sommes ravis de le partager.
 breadcrumbs: Catalogue des formations
 ---
     <div class="row">
-        <div class="col-md-6 col-lg-4">
-            <h3>Java</h3>
-            <ul class="list-unstyled">
-                <li><a href="/beginner">Java débutant</a> <small>(3 jours)</small></li>
-                <li><a href="/formation-intermediaire">Java intermédiaire</a> <small>(3 jours)</small></li>
-                <li><a href="/handson-maven">Maven</a> <small>(1 jour)</small></li>
-                <li><a href="/handson-springcore">Spring Core</a> <small>(1 jour)</small></li>
-                <li><a href="/formation-softwarefactory">Usine logicielle</a> <small>(3 jours)</small></li>
-            </ul>
+        <div class="col-md-8 col-lg-8">
+            <div class="row">
+                <section class="col-md-6">
+                    <h2>Java</h2>
+                    <ul class="list-unstyled">
+                        <li class="training-catalog-entry"><a href="/beginner">Java débutant</a> <small class="duration">(3 jours)</small></li>
+                        <li class="training-catalog-entry"><a href="/formation-intermediaire">Java intermédiaire</a> <small class="duration">(3 jours)</small></li>
+                        <li class="training-catalog-entry"><a href="/handson-maven">Maven</a> <small class="duration">(1 jour)</small></li>
+                        <li class="training-catalog-entry"><a href="/handson-springcore">Spring Core</a> <small class="duration">(1 jour)</small></li>
+                        <li class="training-catalog-entry"><a href="/formation-softwarefactory">Usine logicielle</a> <small class="duration">(3 jours)</small></li>
+                    </ul>
+                </section>
+                <section class="col-md-6">
+                    <h2>Qualité</h2>
+                    <ul class="list-unstyled">
+                        <li class="training-catalog-entry"><a href="/formation-BDD">BDD by example</a> <small class="duration">(3 jours)</small></li>
+                        <li class="training-catalog-entry"><a href="/handson-git">Git</a> <small class="duration">(1 jour)</small></li>
+                        <li class="training-catalog-entry"><a href="/handson-liquibase">Liquibase</a> <small class="duration">(1 jour)</small></li>
+                        <li class="training-catalog-entry"><a href="/formation-product-owner">Product Owner</a> <small class="duration">(3 jours)</small></li>
+                        <li class="training-catalog-entry"><a href="/formation-scrum">Scrum par la pratique</a> <small class="duration">(3 jours)</small></li>
+                        <li class="training-catalog-entry"><a href="/formation-TDD">TDD by example</a> <small class="duration">(3 jours)</small></li>
+                        <li class="training-catalog-entry"><a href="/formation-softwarefactory">Usine logicielle</a> <small class="duration">(3 jours)</small></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col-md-6">
+                    <h2>Gérer ses données</h2>
+                    <ul class="list-unstyled">
+                        <li class="training-catalog-entry"><a href="/formation-mongodb">MongoDB</a> <small class="duration">(3 jours)</small></li>
+                        <li class="training-catalog-entry"><a href="/formation-neo4j">Neo4j</a> <small class="duration">(3 jours)</small></li>
+                        <li class="training-catalog-entry"><a href="/handson-neo4j">Neo4j</a> <small class="duration">(1 jour)</small></li>
+                        <li class="training-catalog-entry"><a href="/handson-elasticsearch">ElasticSearch</a> <small class="duration">(1 jour)</small></li>
+                    </ul>
+                </section>
+                <section class="col-md-6">
+                    <h2>Scala</h2>
+                    <ul class="list-unstyled">
+                        <li class="training-catalog-entry"><a href="/handson-scala">Initiation à Scala</a> <small class="duration">(1 jour)</small></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col-md-6">
+                    <h2>Développement Web</h2>
+                    <ul class="list-unstyled">
+                        <li class="training-catalog-entry"><a href="/handson-angularjs">Initiation à AngularJS</a> <small class="duration">(1 jour)</small></li>
+                    </ul>
+                </section>
+            </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-            <h3>Qualité</h3>
-            <ul class="list-unstyled">
-                <li><a href="/formation-BDD">BDD by example</a> <small>(3 jours)</small></li>
-                <li><a href="/handson-git">Git</a> <small>(1 jour)</small></li>
-                <li><a href="/handson-liquibase">Liquibase</a> <small>(1 jour)</small></li>
-                <li><a href="/formation-product-owner">Product Owner</a> <small>(3 jours)</small></li>
-                <li><a href="/formation-scrum">Scrum par la pratique</a> <small>(3 jours)</small></li>
-                <li><a href="/formation-TDD">TDD by example</a> <small>(3 jours)</small></li>
-                <li><a href="/formation-softwarefactory">Usine logicielle</a> <small>(3 jours)</small></li>
-            </ul>
-        </div>
-        <div class="col-md-6 col-lg-4">
-            <h3>Gérer ses données</h3>
-            <ul class="list-unstyled">
-                <li><a href="/formation-mongodb">MongoDB</a> <small>(3 jours)</small></li>
-                <li><a href="/formation-neo4j">Neo4j</a> <small>(3 jours)</small></li>
-                <li><a href="/handson-neo4j">Neo4j</a> <small>(1 jour)</small></li>
-                <li><a href="/handson-elasticsearch">ElasticSearch</a> <small>(1 jour)</small></li>
-            </ul>
-        </div>
+
+        <aside class="col-md-4 col-lg-4">
+            <div class="sidebox">
+                <h3>Un besoin particulier ?</h3>
+                <p>N'oubliez pas que nous pouvons aussi vous créer des programmes sur mesures.</p>
+                <div class="trainers-info">
+                    <a href="/formateurs"><img class="team-picture" src="/images/trainers.png" alt="List des formateurs"></a>
+                    <p>N'hésitez pas à consulter la <a href="/formateurs">liste de nos formateurs</a> pour avoir un aperçu sur ce que nous pouvons proposer.</p>
+                </div>
+
+                <hr>
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                <h3>Restons en contact</h3>
+                <form role="form" action="http://lateral-thoughts.us7.list-manage1.com/subscribe/post?u=ee440933983f60fdf99c48ee0&amp;id=e65f3c2ee0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <p>Abonnez vous à notre newsletter</p>
+                    <div class="form-group">
+                       <div class="input-group">
+                           <div class="input-group-addon">@</div>
+                           <input id="EMAIL" name="EMAIL" class="form-control" type="email" placeholder="Votre adresse mail" required>
+                        </div>
+                    </div>
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary btn-block">S'abonner</button>
+                </form>
+                </div>
+            </div>
+        </aside>
     </div>

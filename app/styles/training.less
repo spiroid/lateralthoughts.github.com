@@ -49,14 +49,6 @@
     font-weight: bold;
   }
 
-  hr {
-    background: rgba(0, 0, 0, 0.25);
-    height: 1px;
-    width: 100%;
-    display: block;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  }
-
   .person {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -85,10 +77,125 @@
   background-color: white;
 }
 
+.training-catalog-entry {
+    a {
+        text-decoration: underline;
+        color: @brand-primary;
+    }
+
+    .duration {
+        color: @link-color;
+        margin-left: 0.5em;
+    }
+}
+
 .agenda {
   .agenda-title {
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 10px;
   }
+}
+
+.trainers-info {
+  text-align: center;
+
+  a {
+    color: @brand-primary;
+  }
+}
+
+.team-picture {
+  .person-picture;
+  border: 5px solid #fff;
+  height: 180px;
+  width: 180px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* --------------------------------
+    Training table listing
+-------------------------------- */
+.training-table {
+    thead {
+        tr {
+            th {
+                background-color: @gray-super-light;
+                border: none;
+            }
+        }
+    }
+
+
+    tbody {
+        tr {
+            td {
+                border-top: none;
+                border-bottom: 1px solid @purple56;
+            }
+        }
+    }
+
+    .training-item {
+        .subscribe {
+            text-align: right;
+        }
+
+
+        .date {
+            color: @purple56;
+            font-weight: bold;
+        }
+    }
+
+    .month {
+        border-bottom: none;
+
+        .title {
+            margin-top: 40px;
+        }
+    }
+}
+
+
+.training-catalog {
+    margin-bottom: 20px;
+    height: 3.2em;
+
+    .rounded-icon {
+        background-color: @turquoise;
+    }
+}
+
+
+.training-agenda {
+    a {
+        text-decoration: underline;
+        color: @brand-primary;
+    }
+
+    .training-catalog {
+        a {
+            color: @turquoise;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+.rounded-icon {
+    height: 3.2em;
+    line-height: 3.2em;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 3.2em;
+    color: white;
+    background-color: @brand-primary;
+    .rounded;
 }

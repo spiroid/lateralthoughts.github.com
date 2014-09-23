@@ -15,10 +15,12 @@ layout: base.hbs
     <div class="main">
         <div class="container">
             <div class="main-top-header"></div>
+            {{#if breadcrumbs}}
             <ol class="breadcrumb">
                 <li><a href="/">Accueil</a></li>
                 <li class="active">{{ breadcrumbs }}</li>
             </ol>
+            {{/if}}
             <main>
                 {{> body }}
             </main>

@@ -25,17 +25,10 @@ gulp.task('scripts', function () {
         .pipe($.size());
 });
 
-// Process html template files
-gulp.task('fileinclude', function() {
-    return gulp.src(['app/templates/*.html'])
-        .pipe($.fileInclude({
-            prefix: '@@',
-            basepath: '@file'
-        }))
-        .pipe(gulp.dest('.tmp/'))
-        .pipe($.size());
-});
-
+// Assemble.io configuration
+//  - pages
+//  - partials
+//  - layouts
 gulp.task('assemble', function () {
     return gulp.src('app/templates/pages/*.hbs')
         .pipe($.assemble({
@@ -59,7 +52,7 @@ gulp.task('assemble', function () {
 //
 // At the end of the transformation pipe, useref concatanates the result
 // following rules described by the building blocks
-gulp.task('html', ['styles', 'scripts', 'fileinclude', 'assemble'], function () {
+gulp.task('html', ['styles', 'scripts', 'assemble'], function () {
     var assets = $.useref.assets({searchPath: '{.tmp,app}'})
 
     return gulp.src('.tmp/*.html')
@@ -103,8 +96,6 @@ gulp.task('extras', function () {
 
 gulp.task('old-resources', function () {
     return gulp.src(['app/css/**/*.*',
-                     'app/img/**/*.*',
-                     'app/font/**/*.*',
                      'app/js/**/*.*'],
                     { base: './app' })
         .pipe(gulp.dest('dist'))
@@ -136,7 +127,7 @@ gulp.task('connect', function () {
         });
 });
 
-gulp.task('serve', ['connect', 'styles', 'fileinclude', 'assemble'], function () {
+gulp.task('serve', ['connect', 'styles', 'assemble'], function () {
     require('opn')('http://localhost:9000');
 });
 
@@ -150,7 +141,7 @@ gulp.task('wiredep', function () {
         }))
         .pipe(gulp.dest('app/styles'));
 
-    gulp.src(['app/templates/*.html', 'app/templates/**/*.hbs'])
+    gulp.src(['app/templates/**/*.hbs'])
         .pipe(wiredep({
             directory: 'app/bower_components'
         }))
@@ -167,15 +158,11 @@ gulp.task('watch', ['serve'], function () {
         'app/scripts/**/*.js',
         'app/images/**/*',
         'app/css/**/*.*',
-        'app/img/**/*.*',
-        'app/font/**/*.*',
         'app/js/**/*.*',
     ]).on('change', function (file) {
         server.changed(file.path);
     });
 
-    gulp.watch(['app/templates/*.html',
-                'app/templates/include/*.html'], ['fileinclude']);
     gulp.watch(['app/templates/pages/*.hbs',
                 'app/templates/layouts/*.hbs',
                 'app/templates/partials/*.hbs'], ['assemble']);

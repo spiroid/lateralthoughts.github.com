@@ -7,7 +7,8 @@
     "bootstrap": "~3.1.1",
     "font-awesome": "~4.1.0",
     "WOW": "~1.0.0",
-    "readmore": "*"
+    "readmore": "*",
+    "requirejs": "~2.1.15"
   },
   "devDependencies": {}
 }

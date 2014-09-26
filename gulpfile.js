@@ -3,34 +3,48 @@
 var gulp = require('gulp');
 
 // load plugins
-var $ = require('gulp-load-plugins')();
+var $ = require('gulp-load-plugins')(),
+    _ = { app: 'app', dist: 'dist' };
 var gutil = require('gulp-load-utils')(['log']);
 
+
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ styles
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 // Process less stylesheet to css
 // app/styles/ -> ./tmp/styles
 gulp.task('styles', function () {
     return gulp.src(['app/styles/main.less', 'app/styles/bootstrap.less'])
-        .pipe($.less({}).on('error', gutil.log))
+        .pipe($.plumber())
+        .pipe($.less({}))
         .pipe($.autoprefixer('last 2 versions'))
         .pipe(gulp.dest('.tmp/styles'))
         .pipe($.size());
 });
 
 
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ scripts
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 // Validate javascript files with jshint
 gulp.task('scripts', function () {
     return gulp.src(['app/scripts/**/*.js'])
+        .pipe($.plumber())
         .pipe($.jshint())
         .pipe($.jshint.reporter(require('jshint-stylish')))
         .pipe($.size());
 });
 
-// Assemble.io configuration
+
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ assemble.io
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 //  - pages
 //  - partials
 //  - layouts
 gulp.task('assemble', function () {
     return gulp.src('app/templates/pages/*.hbs')
+        .pipe($.plumber())
         .pipe($.assemble({
             data: 'data/*.json',
             partials: 'app/templates/partials/*.hbs',
@@ -39,6 +53,10 @@ gulp.task('assemble', function () {
         .pipe(gulp.dest('.tmp/'));
 });
 
+
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ html
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 // Build final html files for delivery
 // Which means it uses gulp useref plugin
 // to process resources list in build blocks
@@ -56,6 +74,7 @@ gulp.task('html', ['styles', 'scripts', 'assemble'], function () {
     var assets = $.useref.assets({searchPath: '{.tmp,app}'})
 
     return gulp.src('.tmp/*.html')
+        .pipe($.plumber())
         .pipe(assets)
         .pipe($.if('*.js', $.uglify()))
         .pipe($.if('*.css', $.csso()))
@@ -66,21 +85,30 @@ gulp.task('html', ['styles', 'scripts', 'assemble'], function () {
 });
 
 
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ images
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 // Optimize image size
 // app/images/bin/**/* -> dist/images
+// exclude svg images as because of a svgo lib bug : https://github.com/svg/svgo/issues/142
+// it is already fixed but will only be available in version 0.6
 gulp.task('images', function () {
-    return gulp.src('app/images/**/*')
-        .pipe($.cache($.imagemin({
+    return gulp.src('app/images/**/*.{png,jpg,jpeg,gif,ico}')
+        .pipe($.imagemin({
             optimizationLevel: 3,
             progressive: true,
             interlaced: true
-        })))
+        }))
         .pipe(gulp.dest('dist/images'))
         .pipe($.size());
 });
 
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ fonts
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 gulp.task('fonts', function () {
     return $.bowerFiles()
+        .pipe($.plumber())
         .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
         .pipe($.addSrc('app/fonts/**/*.{eot,svg,ttf,woff}'))
         .pipe($.flatten())
@@ -88,50 +116,25 @@ gulp.task('fonts', function () {
         .pipe($.size());
 });
 
+
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ other resources
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 gulp.task('extras', function () {
-    return gulp.src(['app/*.*', '!app/*.html', 'CNAME'], { dot: true })
+    return gulp.src(['app/*.*',
+                     'app/css/**/*.*',
+                     'app/js/**/*.*',
+                     'app/images/**/*.svg',
+                     '!app/*.html', 'CNAME'],
+                    { dot: true, base: './app' })
         .pipe(gulp.dest('dist'))
         .pipe($.size());
 });
 
-gulp.task('old-resources', function () {
-    return gulp.src(['app/css/**/*.*',
-                     'app/js/**/*.*'],
-                    { base: './app' })
-        .pipe(gulp.dest('dist'))
-        .pipe($.size());
-});
 
-gulp.task('clean', function () {
-    return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
-});
-
-gulp.task('build', ['images', 'fonts', 'extras', 'old-resources', 'html']);
-
-gulp.task('default', ['clean'], function () {
-    gulp.start('build');
-});
-
-gulp.task('connect', function () {
-    var connect = require('connect');
-    var app = connect()
-        .use(require('connect-livereload')({ port: 35729 }))
-        .use(connect.static('app'))
-        .use(connect.static('.tmp'))
-        .use(connect.directory('.tmp'));
-
-    require('http').createServer(app)
-        .listen(9000)
-        .on('listening', function () {
-            console.log('Started connect web server on http://localhost:9000');
-        });
-});
-
-gulp.task('serve', ['connect', 'styles', 'assemble'], function () {
-    require('opn')('http://localhost:9000');
-});
-
-// inject bower components
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ bower (Inject Bower components)
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 gulp.task('wiredep', function () {
     var wiredep = require('wiredep').stream;
 
@@ -148,6 +151,9 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('app/templates'));
 });
 
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ watch
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 gulp.task('watch', ['serve'], function () {
     var server = $.livereload();
 
@@ -170,4 +176,49 @@ gulp.task('watch', ['serve'], function () {
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
     gulp.watch('bower.json', ['wiredep']);
+});
+
+
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ clean
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+gulp.task('clean', function () {
+    return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
+});
+
+
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ server
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+gulp.task('connect', function () {
+    var connect = require('connect');
+    var app = connect()
+        .use(require('connect-livereload')({ port: 35729 }))
+        .use(connect.static('app'))
+        .use(connect.static('.tmp'))
+        .use(connect.directory('.tmp'));
+
+    require('http').createServer(app)
+        .listen(9000)
+        .on('listening', function () {
+            console.log('Started connect web server on http://localhost:9000');
+        });
+});
+
+gulp.task('serve', ['connect', 'styles', 'assemble'], function () {
+    require('opn')('http://localhost:9000');
+});
+
+
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ Macro tasks
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+gulp.task('build', ['images', 'fonts', 'extras', 'html']);
+
+
+//|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//| ✓ default
+//'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+gulp.task('default', ['clean'], function () {
+    gulp.start('build');
 });

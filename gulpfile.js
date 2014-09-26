@@ -3,8 +3,9 @@
 var gulp = require('gulp');
 
 // load plugins
-var $ = require('gulp-load-plugins')(),
-    _ = { app: 'app', dist: 'dist' };
+var $   = require('gulp-load-plugins')(),
+    del = require('del'),
+    _   = { app: 'app', dist: 'dist' };
 var gutil = require('gulp-load-utils')(['log']);
 
 
@@ -151,6 +152,7 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('app/templates'));
 });
 
+
 //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //| ✓ watch
 //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -182,8 +184,8 @@ gulp.task('watch', ['serve'], function () {
 //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //| ✓ clean
 //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-gulp.task('clean', function () {
-    return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
+gulp.task('clean', function (cb) {
+    del(['.tmp', 'dist'], cb);
 });
 
 

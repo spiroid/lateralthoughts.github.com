@@ -5,6 +5,7 @@ var gulp = require('gulp');
 // load plugins
 var $     = require('gulp-load-plugins')(),
     del   = require('del'),
+    mbf   = require('main-bower-files'),
     gutil = require('gulp-load-utils')(['log']),
     _     = { app: 'app', dist: 'dist' };
 
@@ -119,9 +120,8 @@ gulp.task('svg', function () {
 //| ✓ fonts
 //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 gulp.task('fonts', function () {
-    return $.bowerFiles()
-        .pipe($.plumber())
-        .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
+    return gulp.src(mbf())
+        .pipe($.filter('*.{eot,svg,ttf,woff}'))
         .pipe($.addSrc('app/fonts/**/*.{eot,svg,ttf,woff}'))
         .pipe($.flatten())
         .pipe(gulp.dest('dist/fonts'))

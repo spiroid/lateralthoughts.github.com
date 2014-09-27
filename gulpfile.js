@@ -15,7 +15,7 @@ var $     = require('gulp-load-plugins')(),
 // Process less stylesheet to css
 // app/styles/ -> ./tmp/styles
 gulp.task('styles', function () {
-    return gulp.src(['app/styles/main.less', 'app/styles/bootstrap.less'])
+    return gulp.src(['app/styles/main.less'])
         .pipe($.plumber())
         .pipe($.less({}))
         .pipe($.autoprefixer('last 2 versions'))

@@ -1,0 +1,19 @@
+.row-fluid { padding:19px 0}
+#masthead .masthead-pad {
+    width:auto;
+    margin: 1% 8%;
+}
+
+#masthead h1,
+ #masthead h2,
+ #masthead h3,
+ #masthead h4,
+ #masthead h5,
+ #masthead h6 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#content { margin-bottom: inherit}
+.pagination-centered { margin-top: 1.5em}
+

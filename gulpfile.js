@@ -136,7 +136,7 @@ gulp.task('extras', function () {
     return gulp.src(['app/*.*',
                      'app/css/**/*.*',
                      'app/js/**/*.*',
-                     '!app/*.html', 'CNAME'],
+                     '!app/*.html', 'app/CNAME'],
                     { dot: true, base: './app' })
         .pipe(gulp.dest('dist'))
         .pipe($.size());

@@ -29,6 +29,12 @@ offerRollover('training');
 offerRollover('swat');
 
 
+// Active menu item
+$(function() {
+    $('.nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+});
+
+
 // Animated scroll for links with anchors
 $('a[href^=\'#\']').on('click', function(e) {
 

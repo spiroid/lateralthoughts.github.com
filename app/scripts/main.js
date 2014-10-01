@@ -31,7 +31,10 @@ offerRollover('swat');
 
 // Active menu item
 $(function() {
-    $('.nav a[href^="/' + location.pathname.split("/")[1] + '"]').parent().addClass('active');
+    var path = location.pathname.split("/")[1];
+    if(path) {
+        $('.nav a[href^="/' + path + '"]').parent().addClass('active');
+    }
 });
 
 

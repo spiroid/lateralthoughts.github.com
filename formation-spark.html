@@ -1,0 +1,277 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>Lateral Thoughts - Introduction à Spark</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Don't add link to favicon on purpose, see http://realfavicongenerator.net/faq#troubleshootings -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="lt layout">
+    <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+        <div role="navigation" class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-logo lt-logo" href="/">
+                        <img src="images/lt_logo_red.svg" alt="Logo">
+                    </a>
+                </div>
+    
+                <div class="tabs-style-underline navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/training">nos formations</a></li>
+                        <li><a href="/projets">nos services</a></li>
+                        <li><a href="/equipe">équipe</a></li>
+                        <li><a href="/blog">blog</a></li>
+                        <li><a href="/vision">nos valeurs</a></li>
+                        <li>
+                        <a class="lt-contact" href="#form-contact">
+                            <div class="lt-mail-pic icon-enveloppe"></div>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /.nav-bar -->
+
+    
+    <header class="wrapper presentation">
+        <div class="container">
+            <div class="catchphrase">
+                    <i class="icon-lt_training catchphrase-icon pull-right"></i>
+                    <h1 class="catchphrase-title">Introduction à Spark</h1>
+                    <blockquote class="catchphrase-quote">Formation officielle <a href="http://www.databricks.com"><strong>Databricks</strong></a> unique en Europe</blockquote>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="container">
+            <div class="main-top-header"></div>
+            <ol class="breadcrumb">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/formations">Formations</a></li>
+                <li class="active">Formation Apache Spark</li>
+            </ol>
+            <main>
+                
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <h2>Introduction à Apache Spark</h2>
+
+            <div class="training-section">
+                <h3 class="section-title"><span class="title-text">Objectifs</span></h3>
+                A la fin de la journée les participants seront confortables avec :
+                <ul>
+                    <li>l'ouverture d'un shell Spark en Scala ou Python;</li>
+                    <li>l'utilisation de plusieurs algorithmes de machine learning distribué en pratique;</li>
+                    <li>la construction/le déploiement d'un livrable JAR d'une application Spark en Java ou Scala;</li>
+                    <li>l'exploration d'un jeu de données chargé depuis HDFS;</li>
+                    <li>l'utilisation de Spark SQL, Spark Streaming, et MLLib;</li>
+                    <li>la mobilisation des resources disponibles sur Apache Spark pour atteindre un objectif métier;</li>
+                </ul>
+                Les participants repartiront avec une démo complète locale (ou dans le cloud) d'une application Spark ainsi qu'avec les pistes nécessaires pour dépasser le cadre de ce cours d'introduction voire entammer les certifications Spark suivantes.
+            </div>
+
+
+            <div class="training-section">
+                <h3 class="section-title"><span class="title-text">Méthode pédagogique</span></h3>
+                <p>La session de formation complète (8 heures) requiert que les participants amènent un ordinateur portable avec accès wifi, le SDK Java 6/7 ou 8 et Python 2.7 d'installé. Il y a aura une utilisation limitée d'Amazon AWS, pour accèder au cluster AWS de l'intervenant, il sera donc nécessaire de pouvoir ouvrir une session SSH depuis l'ordinateur.<p>
+
+                <p>La formation commencera le matin par couvrir l'installation et le paramètrage, quelques exercices hands-on, ainsi qu'un survol de l'API et un cours théorique sur Apache Spark. </p>
+
+                <p>L'après midi sera dédié au développement logiciel, à l'industrialisation, aux demos, aux études de cas, ainsi qu'à l'étude des sujets avancés et des pistes pour la suite. </p>
+
+                <p>Dans sa globalité, la formation correspond à 40% de mise en pratique et 60% de théorie avec une emphase particulière sur comment progresser le plus rapidement possible après la formation.</p>
+            </div>
+
+            <div class="training-section agenda">
+                <h3 class="section-title"><span class="title-text">Au programme</span></h3>
+                <h4 class="agenda-title">Théorie et installation local</h4>
+                S'approprier les bases théoriques du système, avec un retour sur l'histoire du Big Data de Spark<br/>
+                Installation local de Spark pour le prototypage rapide<br/>
+                Introduction à l'écriture et l'execution de quelques exemples simples d'applications Spark
+
+                <h4 class="agenda-title">API et Industrialisation</h4>
+                Utiliser l'API core de Spark en Scala, Java, et Python<br/>
+                Mise en place d'un cycle industriel de développement: build, déploiement et monitoring
+
+
+                <h4 class="agenda-title">Déploiement de Spark</h4>
+                Déploiement de Spark sur un cluster Big Data<br/>
+                Comment diagnostiquer et debugger les problèmes d'une application Spark déployée.
+
+
+                <h4 class="agenda-title">Extensions et eco-systèmes</h4>
+                Combiner la puissance des outils Spark SQL, Machine Learning, et Streaming pour mettre en places des pipelines de données complets.<br/>
+                Tooling: SBT, Maven, IPython Notebook, etc.
+
+
+                <h4 class="agenda-title">Sujets avancés</h4>
+                Etudes des sujets avancés et analyse de la stack complète <strong>BDAS</strong> (Berkeley Data Analytics Stack)<br/>
+                Etudes de cas pour le déploiement en production<br/>
+                Pistes pour continuer l'apprentissage de Spark
+
+            </div>
+        </div>
+
+
+        <aside class="col-md-4 col-lg-3">
+            <div class="sidebox training-info">
+                <img src="images/formations/spark-logo.png" class="training-picture"/>
+                <h3 class="info-title"">Prix</h3>
+                <p><small>(inter entreprises)</small></p>
+                <span class="price-tag"><span class="price">999 HT</span> / personne</span>
+
+                <h3 class="info-title">Durée</h3>
+                <p class="duration">1 jour</p>
+
+                <a href="#form-contact" class="btn btn-large btn-primary">Demander un devis</a>
+                <hr>
+
+                <h3 class="info-title">Audience</h3>
+                <p>C'est une formation orienté développeur et non une formation administrateur.</p>
+                <hr>
+
+                <h3 class="info-title">Pré-requis</h3>
+                <p>
+                    Les participants devront être familié avec un des langages de programmation utilisé dans le cours: Java, Scala ou Python.
+                </p>
+                <hr>
+
+                <h3 class="info-title">Formateur</h3>
+                <div class="person">
+                    <img src="images/membres/ogirardot.jpg" class="person-picture">
+                    <h2 class="person-title">Olivier Girardot</h2>
+                    <div class="person-share">
+                        <a href="https://www.twitter.com/ogirardot" title="@ogirardot"><i class="fa fa-twitter"></i></a>
+                        <a href="https://github.com/ogirardot" title="ogirardot@github"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+            </main>
+        </div>
+    </div>
+
+    
+        <div class="wrapper contact">
+            <div class="container">
+                <h2 id="form-contact" class="animated fadeIn wow">Contactez nous</h2>
+                <form class="contact-form" action="mailto:contact@lateral-thoughts.com" method="POST" accept-charset="utf-8" enctype="text/plain" >
+                    <div class="row">
+                        <div class="col-sm-4 animated slideInLeft wow">
+                            <div class="form-group">
+                                <label for="name">Votre nom et prénom</label>
+                                <input class="form-control" type="text" id="name" name="name"
+                                       maxlength="255" title="Votre nom" data-trigger="focus" rel="tooltip"
+                                       data-placement="right" placeholder="Votre nom" required="required"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 animated fadeIn wow">
+                            <div class="form-group">
+                                <label for="email">Votre email</label>
+                                <input class="form-control" type="email" id="email" name="email"
+                                       maxlength="255" title="john@doe.com" data-trigger="focus" rel="tooltip"
+                                       data-placement="right" placeholder="john@doe.com" required="required"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 animated slideInRight wow">
+                            <div class="form-group">
+                                <label for="phone">Votre numéro de téléphone</label>
+                                <input class="form-control" type="tel" id="phone" name="phone"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group contact-message animated fadeIn wow">
+                        <label>Votre message</label>
+                        <textarea class="form-control"
+                                  title="Besoin de conseil, d'aide sur un projet, de formation ou interessé par notre incubateur ?"
+                                  data-trigger="focus" rows="10" data-placement="right"
+                                  placeholder="Besoin de conseil, d'aide sur un projet, de formation ou interessé par notre incubateur ?"
+                                  required="required" value=""></textarea>
+                    </div>
+                    <div class="contact-submit-wrapper animated fadeIn wow">
+                        <input id="contact-submit" class="contact-submit" type="submit">
+                        <label class="contact-submit" for="contact-submit">
+                            <div class="contact-submit-pic icon-send"></div>
+                            <span class="contact-submit-label">Envoyer</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer class="wrapper page-footer">
+            <div class="container">
+                <div class="float-wrapper">
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item logo">
+                            <a href="/">
+                                <img src="images/lt_logo_grey.svg" alt="Logo Lateral Thoughts">
+                            </a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="/formations">nos formations</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="/formateurs">nos formateurs</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="/incubateur">incubateur</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#form-contact">task force</a>
+                        </li>
+                    </ul>
+    
+                    <ul class="social-icons pull-right">
+                        <li class="social-icon github">
+                            <a class="icon-github" href="https://github.com/LateralThoughts" target="_blank"></a>
+                        </li>
+                        <li class="social-icon twitter">
+                            <a class="icon-twitter" href="https://twitter.com/LateraIThoughts" target="_blank"></a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <p class="copyright clearfix">&#169; 2014 Lateral Thoughts, tous droits réservés.</p>
+            </div>
+        </footer>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33016590-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+    </script>
+
+    <script src="scripts/vendor.js"></script>
+
+    <script src="scripts/main.js"></script>
+
+    <script src="js/require.js" data-main="js/main"></script>
+    </body>
+</html>

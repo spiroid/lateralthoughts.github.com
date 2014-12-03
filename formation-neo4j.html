@@ -1,0 +1,336 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>Lateral Thoughts - Formation Neo4J</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Don't add link to favicon on purpose, see http://realfavicongenerator.net/faq#troubleshootings -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="lt layout">
+    <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+        <div role="navigation" class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-logo lt-logo" href="/">
+                        <img src="images/lt_logo_red.svg" alt="Logo">
+                    </a>
+                </div>
+    
+                <div class="tabs-style-underline navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/training">nos formations</a></li>
+                        <li><a href="/projets">nos services</a></li>
+                        <li><a href="/equipe">équipe</a></li>
+                        <li><a href="/blog">blog</a></li>
+                        <li><a href="/vision">nos valeurs</a></li>
+                        <li>
+                        <a class="lt-contact" href="#form-contact">
+                            <div class="lt-mail-pic icon-enveloppe"></div>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /.nav-bar -->
+
+    
+    <header class="wrapper presentation">
+        <div class="container">
+            <div class="catchphrase">
+                    <i class="icon-lt_training catchphrase-icon pull-right"></i>
+                    <h1 class="catchphrase-title">Formation Neo4J</h1>
+                    <blockquote class="catchphrase-quote">Nous aimons construire des applications modernes en tirant parti des technos les plus adaptées et nous sommes ravis de le partager.</blockquote>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="container">
+            <div class="main-top-header"></div>
+            <ol class="breadcrumb">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/formations">Formations</a></li>
+                <li class="active">Formation Neo4J</li>
+            </ol>
+            <main>
+                
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <h2>Formation : Neo4J</h2>
+
+            <div class="training-section">
+                <h3 class="section-title"><span class="title-text">Objectifs</span></h3>
+                <ul>
+                    <li>Comprendre le modèle des bases de données graphe</li>
+                    <li>Maîtriser les APIs unitaires (CRUD noeuds &amp; relations) et d'indexation [auto-indexation, indexation manuelle, indexation par label]</li>
+                    <li>Savoir requêter de la donnée (traversées &amp; Cypher)</li>
+                    <li>Importer des données (batch, Talend, Geoff)</li>
+                    <li>Déployer Neo4j en mode serveur (API REST standard, unmanaged extensions)</li>
+                    <li>Appréhender Spring Data</li>
+                </ul>
+            </div>
+
+            <div class="training-section">
+                <h3 class="section-title"><span class="title-text">Méthode pédagogique</span></h3>
+                <p>Certaines itérations feront l'objet d'une démonstrations et de questions/réponses</p>
+                <p>La plupart des sujets se découperont comme suit :</p>
+                <ul>
+                    <li>20 min de présentation de l’itération : présentation de l’exercice et des concepts à utiliser.</li>
+                    <li>1h20 de pratique.</li>
+                    <li>20 min de rétrospective : présentation par les participants des difficultés rencontrées et de leur résolutions. </li>
+                </ul>
+                <p>La formation s'effectuera en Java et en Javascript.</p>
+            </div>
+
+            <div class="training-section agenda">
+                <h3 class="section-title"><span class="title-text">Au programme</span></h3>
+                <h4 class="agenda-title">Notions élémentaires</h4>
+                <ul>
+                    <li>Présentation des graphes et bases de données graphes </li>
+                    <li>Découverte des API unitaires
+                        <ul>
+                            <li>CRUD de noeuds</li>
+                            <li>CRUD de relations</li>
+                        </ul>
+                    </li>
+                    <li>Prise en main des différentes APIs d'indexation
+                        <ul>
+                            <li>indexation manuelle (legacy)</li>
+                            <li>auto-indexation (legacy)</li>
+                            <li>indexation par label</li>
+                        </ul>
+                    </li>
+
+                    <li>Présentation d'exemples inspirés de <a href="http://www.neotechnology.com/customers/">cas réels</a>
+                        <ul>
+                            <li>catalogue d'un opérateur mobile</li>
+                            <li>recommandations de contacts professionnels</li>
+                            <li>réseau de transport ferroviaire</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4 class="agenda-title">Requêtage des données</h4>
+                <ul>
+                    <li>Exposition des différents algorithmes de traversée et utilisation avec Neo4j
+                        <ul>
+                            <li>Breadth-First Search</li>
+                            <li>Depth-First Search</li>
+                            <li>Framework de traversée Neo4J</li>
+                        </ul>
+                    </li>
+
+                    <li>Découvrir Cypher
+                        <ul>
+                            <li>pattern matching sur graphe</li>
+                            <li>syntaxe</li>
+                            <li>plans d'exécution</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4 class="agenda-title">Exposition des données</h4>
+                <ul>
+                    <li>API REST standard
+                        <ul>
+                            <li>CRUD</li>
+                            <li>indexation</li>
+                            <li>exécution de requêtes Cypher</li>
+                            <li>streaming des résultats</li>
+                        </ul>
+                    </li>
+                    <li>Extension des APIS standards
+                        <ul>
+                            <li>unmanaged extensions</li>
+                            <li>sécurisation des accès</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4 class="agenda-title">Mapping Graphe-Object avec Spring Data</h4>
+                <ul>
+                    <li>motivations et concepts derrière Spring Data</li>
+                    <li>découverte des @NodeEntity, @RelationshipEntity et GraphRepository</li>
+                    <li>indexation</li>
+                    <li>requêtes Géospatiales</li>
+                </ul>
+
+                <h4 class="agenda-title">Import de données</h4>
+                <ul>
+                    <li>insertion en batch [BatchInserters]</li>
+                    <li>utilisation du module d'import Talend</li>
+                    <li>découverte de Geoff</li>
+                </ul>
+
+                <h4 class="agenda-title">Déploiement</h4>
+                <p>Découverte des PAAS disponibles.</p>
+
+                <h4 class="agenda-title">Visualisation de données</h4>
+                <ul>
+                    <li>Neoclipse, Gephi</li>
+                    <li>Linkurious</li>
+                    <li>Console Neo4J</li>
+                    <li>visualisation custom [sigma.js]</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <aside class="col-md-4 col-lg-3">
+            <div class="sidebox training-info">
+                <img src="images/formations/neo4j.jpg" class="training-picture"/>
+                <h3 class="info-title"">Prix</h3>
+                <p><small>(inter entreprises)</small></p>
+                <span class="price-tag"><span class="price">1490€ HT</span> / personne</span>
+
+                <h3 class="info-title">Durée</h3>
+                <p class="duration">3 jours</p>
+
+                <a href="#form-contact" class="btn btn-large btn-primary">Demander un devis</a>
+                <hr>
+
+                <h3 class="info-title">Audience</h3>
+                <p>C'est une formation orientée développeurs et non une formation administrateurs.</p>
+                <hr>
+
+                <h3 class="info-title">Pré-requis</h3>
+                <p>Les participants devront connaître le language Java.</p>
+                <hr>
+
+                <h3 class="info-title">Formateur</h3>
+                <div class="person">
+                    <img src="images/membres/fbiville.jpg" class="person-picture">
+                    <h2 class="person-title">Florent Biville</h2>
+                    <div class="person-share">
+                        <a href="https://twitter.com/fbiville" title="@fbiville"><i class="fa fa-twitter"></i></a>
+                        <a href="https://github.com/fbiville/" title="fbiville@github"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+            </main>
+        </div>
+    </div>
+
+    
+        <div class="wrapper contact">
+            <div class="container">
+                <h2 id="form-contact" class="animated fadeIn wow">Contactez nous</h2>
+                <form class="contact-form" action="mailto:contact@lateral-thoughts.com" method="POST" accept-charset="utf-8" enctype="text/plain" >
+                    <div class="row">
+                        <div class="col-sm-4 animated slideInLeft wow">
+                            <div class="form-group">
+                                <label for="name">Votre nom et prénom</label>
+                                <input class="form-control" type="text" id="name" name="name"
+                                       maxlength="255" title="Votre nom" data-trigger="focus" rel="tooltip"
+                                       data-placement="right" placeholder="Votre nom" required="required"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 animated fadeIn wow">
+                            <div class="form-group">
+                                <label for="email">Votre email</label>
+                                <input class="form-control" type="email" id="email" name="email"
+                                       maxlength="255" title="john@doe.com" data-trigger="focus" rel="tooltip"
+                                       data-placement="right" placeholder="john@doe.com" required="required"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 animated slideInRight wow">
+                            <div class="form-group">
+                                <label for="phone">Votre numéro de téléphone</label>
+                                <input class="form-control" type="tel" id="phone" name="phone"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group contact-message animated fadeIn wow">
+                        <label>Votre message</label>
+                        <textarea class="form-control"
+                                  title="Besoin de conseil, d'aide sur un projet, de formation ou interessé par notre incubateur ?"
+                                  data-trigger="focus" rows="10" data-placement="right"
+                                  placeholder="Besoin de conseil, d'aide sur un projet, de formation ou interessé par notre incubateur ?"
+                                  required="required" value=""></textarea>
+                    </div>
+                    <div class="contact-submit-wrapper animated fadeIn wow">
+                        <input id="contact-submit" class="contact-submit" type="submit">
+                        <label class="contact-submit" for="contact-submit">
+                            <div class="contact-submit-pic icon-send"></div>
+                            <span class="contact-submit-label">Envoyer</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer class="wrapper page-footer">
+            <div class="container">
+                <div class="float-wrapper">
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item logo">
+                            <a href="/">
+                                <img src="images/lt_logo_grey.svg" alt="Logo Lateral Thoughts">
+                            </a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="/formations">nos formations</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="/formateurs">nos formateurs</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="/incubateur">incubateur</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#form-contact">task force</a>
+                        </li>
+                    </ul>
+    
+                    <ul class="social-icons pull-right">
+                        <li class="social-icon github">
+                            <a class="icon-github" href="https://github.com/LateralThoughts" target="_blank"></a>
+                        </li>
+                        <li class="social-icon twitter">
+                            <a class="icon-twitter" href="https://twitter.com/LateraIThoughts" target="_blank"></a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <p class="copyright clearfix">&#169; 2014 Lateral Thoughts, tous droits réservés.</p>
+            </div>
+        </footer>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33016590-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+    </script>
+
+    <script src="scripts/vendor.js"></script>
+
+    <script src="scripts/main.js"></script>
+
+    <script src="js/require.js" data-main="js/main"></script>
+    </body>
+</html>

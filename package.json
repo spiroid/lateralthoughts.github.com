@@ -1,7 +1,14 @@
 {
   "name": "lt-website",
   "version": "0.1.0",
-  "dependencies": {},
+  "dependencies": {
+    "imagemin-gifsicle": "~4.0.0",
+    "imagemin-jpegtran": "~4.0.0",
+    "imagemin-optipng": "~4.0.0",
+    "imagemin-pngquant": "~4.0.0",
+    "through2": "~0.6.3",
+    "uglify-js": "~2.4.16"
+  },
   "devDependencies": {
     "chalk": "~0.5.1",
     "connect": "~2",

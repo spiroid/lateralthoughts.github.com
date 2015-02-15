@@ -45,14 +45,21 @@ gulp.task('scripts', function () {
 //  - partials
 //  - layouts
 gulp.task('assemble', function () {
-    return gulp.src('app/templates/pages/*.hbs')
-        .pipe($.plumber())
+    gulp.src('app/templates/pages/*.hbs')
         .pipe($.assemble({
             data: 'data/*.json',
             partials: 'app/templates/partials/*.hbs',
             layoutdir: 'app/templates/layouts/'
         }).on("error", gutil.log))
         .pipe(gulp.dest('.tmp/'));
+
+    gulp.src('app/templates/pages/child/*.hbs')
+        .pipe($.assemble({
+            data: 'data/*.json',
+            partials: 'app/templates/partials/*.hbs',
+            layoutdir: 'app/templates/layouts/'
+        }).on("error", gutil.log))
+        .pipe(gulp.dest('.tmp/child/'));
 });
 
 
@@ -75,8 +82,7 @@ gulp.task('assemble', function () {
 gulp.task('html', ['styles', 'scripts', 'assemble'], function () {
     var assets = $.useref.assets({searchPath: '{.tmp,app}'})
 
-    return gulp.src('.tmp/*.html')
-        .pipe($.plumber())
+    return gulp.src('.tmp/**/*.html')
         .pipe(assets)
         .pipe($.if('*.js', $.uglify()))
         .pipe($.if('*.css', $.csso()))
